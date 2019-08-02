@@ -13,7 +13,7 @@
  * 
  * Et enfin on pourra rediriger l'utilisateur vers l'article en question
  */
-
+require_once('libraries/databese.php');
 /**
  * 1. On vérifie que les données ont bien été envoyées en POST
  * D'abord, on récupère les informations à partir du POST
@@ -55,10 +55,7 @@ if (!$author || !$article_id || !$content) {
  * 
  * PS : Ca fait pas genre 3 fois qu'on écrit ces lignes pour se connecter ?! 
  */
-$pdo = new PDO('mysql:host=localhost;dbname=blogpoo;charset=utf8', 'root', '', [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-]);
+$pdo = getPDO();
 
 $query = $pdo->prepare('SELECT * FROM articles WHERE id = :article_id');
 $query->execute(['article_id' => $article_id]);
