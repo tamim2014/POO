@@ -19,6 +19,7 @@ require_once('libraries/utils.php');
 $article_id = null;
 
 // Mais si il y'en a un et que c'est un nombre entier, alors c'est cool
+// $_GET['id'] : id transmis par index.html.php  
 if (!empty($_GET['id']) && ctype_digit($_GET['id'])) {
     $article_id = $_GET['id'];
 }
@@ -36,10 +37,7 @@ if (!$article_id) {
  * 
  * PS : Vous remarquez que ce sont les mêmes lignes que pour l'index.php ?!
  */
-$pdo = new PDO('mysql:host=localhost;dbname=blogpoo;charset=utf8', 'root', '', [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-]);
+$pdo = getPDO();
 
 /**
  * 3. Récupération de l'article en question
@@ -67,9 +65,4 @@ $commentaires = $query->fetchAll();
  */
 $pageTitle = $article['title'];
 
-render('articles/show',[
-    'pageTitle'     =>$pageTitle, 
-    'article'       =>$article,
-    'commentaires'  =>$commentaires, 
-    'article_id'    =>$article_id
-]);
+render_show( compact( 'pageTitle' ,'article' ,'commentaires' , 'article_id' ));

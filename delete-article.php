@@ -6,9 +6,12 @@
  * Il va donc falloir bien s'assurer qu'un paramètre "id" est bien passé en GET, puis que cet article existe bel et bien
  * Ensuite, on va pouvoir effectivement supprimer l'article et rediriger vers la page d'accueil
  */
-require_once('libraries/databese.php');
+require_once('libraries/database.php');
 /**
  * 1. On vérifie que le GET possède bien un paramètre "id" (delete.php?id=202) et que c'est bien un nombre
+ * 
+ *  $_GET['id'] : id transmis par index.html.php 
+ * 
  */
 if (empty($_GET['id']) || !ctype_digit($_GET['id'])) {
     die("Ho ?! Tu n'as pas précisé l'id de l'article !");
