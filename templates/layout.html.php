@@ -10,6 +10,8 @@
 
 <body>
     <?= $pageContent ?> <!-- variable defini dans index.php: par appel de utils.php -->
+    <br><br><br>
+    <div style="text-align:center;"> <a  href="documentation/index.html">Documentation du projet</a></div>
 </body>
 
 </html>
