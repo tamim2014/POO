@@ -6,8 +6,8 @@
  * On va donc se connecter à la base de données, récupérer les articles du plus récent au plus ancien (SELECT * FROM articles ORDER BY created_at DESC)
  * puis on va boucler dessus pour afficher chacun d'entre eux
  */
-require_once('libraries/database.php');
-require_once('libraries/utils.php');
+require_once('libraries/database.php'); // connexion a la base de donnee
+require_once('libraries/utils.php'); // appel des vues
 /**
  * 
  * 1. Connexion à la base de données avec PDO
@@ -19,9 +19,7 @@ require_once('libraries/utils.php');
 $pdo = getPDO();
 
 /**
-* 
 * 2. Récupération des articles
-*
 */
 // On utilisera ici la méthode query (pas besoin de préparation car aucune variable n'entre en jeu)
 $resultats = $pdo->query('SELECT * FROM articles ORDER BY created_at DESC');
@@ -29,11 +27,8 @@ $resultats = $pdo->query('SELECT * FROM articles ORDER BY created_at DESC');
 $articles = $resultats->fetchAll();
 
 /**
-* 
 * 3. Affichage
-*
 */
 $pageTitle = "Accueil";
-
-render_index( compact( 'pageTitle' ,'articles'  ));
+render_index( compact( 'pageTitle' ,'articles'  )); // vue de la page d'accueil: index.html.php
 
