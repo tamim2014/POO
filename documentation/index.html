@@ -1,0 +1,159 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>POO - Programmation Orientee Objet: Documentation</title>
+	
+	<meta name="author" content="annabalashova">
+	<meta name="copyright" content="annabalashova">
+	<meta name="generator" content="Documenter v1.6 http://rxa.li/documenter">
+	<meta name="date" content="2014-02-13">
+	
+	<link rel="stylesheet" href="css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="css/prettify.css" type="text/css" media="screen, projection">
+	
+	<script src="js/jquery.1.6.4.js"></script>
+	
+	<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+	<script src="js/jquery.easing.js"></script>
+	<script src="js/prettify.js"></script>	
+	<script>document.createElement('section');var duration=450,easing='easeOutExpo';</script>
+	<script src="js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#0000FF;}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ol a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ol a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ol{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ol a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ol a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ol a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body>
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ol id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+            <li><a href="#install">PHP Files &amp; Structure</a></li>
+			<li><a href="#general_settings">CSS Files</a></li>
+            <li><a href="#panel">JavaScript</a></li>
+		</ol>
+		<div id="documenter_copyright">Copyright ahamadandjib 2019<br></div>
+	</div>
+	<div id="documenter_content">
+		<section id="documenter_cover">
+			<h1>POO - Programmation Orientee Objet: Documentation</h1>
+			<h2>Structure du Projet</h2><hr>
+			<ul>
+				<li>By: Ahamada Mze Andjib</li>
+				<li><a href="https://github.com/tamim2014/POO">github.com/tamim2014/POO</a></li>
+			</ul>
+			<p>C'est juste un module de presentation. Le projet est telechargeable a l'adresse ci-dessus.</p>
+			<p><span style=" text-decoration: underline overline ; color:red;">Bug !:</span><br> Seul Internet Explorer gere cette page de documentation.<br> Chrome ne fonctionne pas (pour je sais pas encore quelle raison ?!) .</p>
+		</section>
+		
+		<section id="install">      
+			<h3>PHP Files & Structure</h3><hr class="notop">
+			<p>Le site contient 4 fichiers de base: <br>
+			    - <code>index.php</code> Interraction avec la Base de Donnees. Elle est definie dans le fichier <code>blogpoo.sql</code><br>
+				- <code>article.php</code><br>
+				- <code>delete-article.php</code> <br>
+				- <code>delete-comment.php</code> 
+			</p>	
+					
+			On a 2 dossiers:<code>libraries</code>, et  <code>templates</code>.<br><br>
+			Le dossier <code>libraries</code> contient:<br>
+			- Le fichier <code>libraries/database.php</code> pour la connexion a la base de donnee.<br>
+			- Le fichier <code>libraries/utils.php</code> , une bibliotheque. On y trouve entre autres, les fonction d'appel aux vues.<br><br>
+			Le dossier <code>templates</code> contient les vues suivantes:<br>
+			- Le fichier <code>templates/layout.html.php</code> vue globale{structure) de la page index(son model htm5),<br>
+			- Le fichier <code>templates/articles/index.html.php</code> vue modulaire et iterative. Presentation introductive de chaque article dans la page index ,<br>
+			- Le fichier <code>templates/articles/show.html.php</code> vue (structure) d'un article.<br><br>
+						
+			<pre class="prettyprint lines">
+			     <img src="img/diagram.png" />
+            </pre>
+			<p>If you would like to edit the color, font, or style of any elements in one of these columns, you would do the following:</p>
+			<ul>
+				<li><strong>Colors:</strong> autoCorrect is necessary to change the foreground color (Ctrl + F);</li>
+				<li><strong>Fonts:</strong> replace the existing font assigned to the <code>body</code>;</li>
+				<li><strong>Elements:</strong> you can swap, delete all items on the page;</li>
+			</ul>
+			
+		</section>
+      
+		<section id="general_settings">
+			<h3>CSS Files</h3>
+			<p>I'm using six CSS files in this theme.</p>
+			<ul>
+				<li><code>style.css</code> - Main stylesheet. This file also contains some general styling, such as anchor tag colors, font-sizes, etc.</li>
+				<li><code>bootstrap.min.css</code> - bootstrap styles</li>
+				<li><code>flexslider.css</code> - FlexSlider styles. Used in the blog.</li>
+				<li><code>owl.carousel.css</code> - own.carousel styles. Used in the Clients block and Features Works</li>
+				<li><code>animate.css</code> - animation styles</li>
+				<li><code>prettyPhoto.css</code> - PrettyPhoto style.</li>
+			</ul>
+			
+			<p>Mind that these values might be overridden somewhere else in the file.</p>
+			<p><code>style.css</code> file contains all of the specific stylings for the page. The file is separated into sections using:</p>
+			
+<pre class="prettyprint lines">
+/*-----------------------------------------------------------------------------------*/
+/*	NAME OF BLOCK
+/*-----------------------------------------------------------------------------------*/
+
+etc.
+</pre>
+
+			<p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p>
+
+			<p>All images are found in the <code>images</code>. If you want to replace the image, just copy the folder with the same name as the original file with identical proportions.</p>
+			
+		</section>
+
+
+		<section id="panel">
+			<h3>JavaScript</h3>
+			<p>Twelve Javascript files are used in this site.</p>
+			<ul>
+				<li><code>myscript.js</code> - User configuration file scripts. Most of the animation in this site are carried out from the customs scripts. There are a few functions that you can look at.<br><br>
+				file contains all of the specific stylings for the page. The file is separated into sections using:</p>	
+<pre class="prettyprint lines">
+/*-----------------------------------------------------------------------------------*/
+/*	NAME OF BLOCK
+/*-----------------------------------------------------------------------------------*/
+
+etc.
+</pre>
+<br>
+				</li>
+				<li><code>blog_post.js</code> - Calls scripts, used on the inside page of posts</li>
+				<li><code>jquery.flexslider-min.js</code> - FlexSlider script. Used in the home block.</li>
+				<li><code>jquery.isotope.min.js</code> - Isotop script. Used in the blog.</li>
+				<li><code>jquery.own.carousel.js</code> - used to scroll the block "command" and Features Works.</li>
+				<li><code>jquery.prettyPhoto.js</code> - PrettyPhoto script. script allows you to magnify images.</li>
+				<li><code>animate.js</code> - appearance of the animation function blocks when scrolling website.</li>
+				<li><code>jquery.BlackAndWhite.js</code> - Apply a black white logo customers.</li>
+				<li><code>jquery.mb.YTPlayer.js</code> - video player on slides in section <code>home</code>.</li>
+				<li><code>jquery.min.js</code> - jQuery 1.10.2.</li>
+				<li><code>jquery.nicescroll.min.js</code> - replacement for the standard to scroll.</li>
+				<li><code>superfish.min.js</code> - drop-down menu of the second level.</li>
+			</ul>
+		</section>
+
+	</div>
+</body>
+</html>
