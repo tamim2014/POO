@@ -68,6 +68,13 @@ function findAllComments($article_id)
     
 }
 
+function deleteArticle($id)
+{
+    $pdo = getPDO(); 
+    $query = $pdo->prepare('DELETE FROM articles WHERE id = :id');
+    $query->execute(['id' => $id]);
+}
+
 
 
 ?>
