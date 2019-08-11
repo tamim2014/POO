@@ -34,7 +34,7 @@ $pdo = getPDO();
  */
 
 $commentaire = findComment($id);
-if (!$commetaire) {
+if (!$commentaire) {
     die("Aucun commentaire n'a l'identifiant $id !");
 }
 
@@ -43,7 +43,7 @@ if (!$commetaire) {
  * On récupère l'identifiant de l'article avant de supprimer le commentaire
  */
 
-$commentaire = $query->fetch();
+//$commentaire = $query->fetch();
 $article_id = $commentaire['article_id'];
 
 deletComment($id);

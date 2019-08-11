@@ -36,7 +36,7 @@ function render_index( array $variables=[] )
     require('templates/layout.html.php');
 }
 
-function redirect(string $url)
+function redirect($url)
 {
     header("Location: $url");
     exit();

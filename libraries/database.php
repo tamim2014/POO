@@ -94,6 +94,14 @@ function deletComment($id)
 
 }
 
+function insertComment($author,$content,$article_id)
+{
+    $pdo = getPDO();
+    $query = $pdo->prepare('INSERT INTO comments SET author = :author, content = :content, article_id = :article_id, created_at = NOW()');
+    $query->execute(compact('author', 'content', 'article_id'));
+
+}
+
 
 
 ?>
