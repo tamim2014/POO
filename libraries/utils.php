@@ -1,4 +1,12 @@
 <?php
+/*
+* PROBLEME: On repete les mm bout de code un peu partout
+* SOLUTION: REFACTORISATION DU CODE(c'est le role des FONCTIONS) 
+*
+* render(array tableau)    .......... pour afficher une page
+* redirect(string chemin)  .......... pour faire une redirection
+*
+*/
 //vue d'un article
 //render('articles/show')
 

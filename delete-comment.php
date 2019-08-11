@@ -7,7 +7,8 @@
  * Puis on le supprimera !
  */
 
-require_once('libraries/databese.php');
+require_once('libraries/database.php');
+require_once('libraries/utils.php');
 /**
  * 1. Récupération du paramètre "id" en GET
  */
@@ -50,6 +51,11 @@ $query->execute(['id' => $id]);
 
 /**
  * 5. Redirection vers l'article en question
+ * 
+ *  redirect("Location: article.php?id=" . $article_id);
  */
-header("Location: article.php?id=" . $article_id);
-exit();
+
+ header("Location: article.php?id=" . $article_id);
+ exit();
+
+

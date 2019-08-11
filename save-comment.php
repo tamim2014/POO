@@ -13,7 +13,7 @@
  * 
  * Et enfin on pourra rediriger l'utilisateur vers l'article en question
  */
-require_once('libraries/databese.php');
+require_once('libraries/database.php');
 /**
  * 1. On vérifie que les données ont bien été envoyées en POST
  * D'abord, on récupère les informations à partir du POST
