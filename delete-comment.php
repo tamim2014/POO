@@ -1,7 +1,7 @@
 <?php
 
 /**
- * DANS CE FICHIER ON CHERCHE A SUPPRIMER LE COMMENTAIRE DONT L'ID EST PASSE EN PARAMETRE GET !
+ * DANS CE FICHIER ON CHERCHE A SUPPRIMER LE COMMENTAIRE DONT L'id EST PASSE EN PARAMETRE GET !
  * 
  * On va donc vérifier que le paramètre "id" est bien présent en GET, qu'il correspond bien à un commentaire existant
  * Puis on le supprimera !
@@ -10,7 +10,7 @@
 require_once('libraries/database.php');
 require_once('libraries/utils.php');
 /**
- * 1. Récupération du paramètre "id" en GET
+ * 1. Récupération de l' "id" du paramètre en GET
  */
 if (empty($_GET['id']) || !ctype_digit($_GET['id'])) {
     die("Ho ! Fallait préciser le paramètre id en GET !");
@@ -32,9 +32,9 @@ $pdo = getPDO();
 /**
  * 3. Vérification de l'existence du commentaire
  */
-$query = $pdo->prepare('SELECT * FROM comments WHERE id = :id');
-$query->execute(['id' => $id]);
-if ($query->rowCount() === 0) {
+
+$commentaire = findComment($id);
+if (!$commetaire) {
     die("Aucun commentaire n'a l'identifiant $id !");
 }
 
@@ -46,8 +46,7 @@ if ($query->rowCount() === 0) {
 $commentaire = $query->fetch();
 $article_id = $commentaire['article_id'];
 
-$query = $pdo->prepare('DELETE FROM comments WHERE id = :id');
-$query->execute(['id' => $id]);
+deletComment($id);
 
 /**
  * 5. Redirection vers l'article en question

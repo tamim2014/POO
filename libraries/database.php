@@ -75,6 +75,25 @@ function deleteArticle($id)
     $query->execute(['id' => $id]);
 }
 
+// D'abord on verfie que le commentaire existe avant de le supprimer
+function findComment($id)
+{
+    $pdo = getPDO();
+    $query = $pdo->prepare('SELECT * FROM comments WHERE id = :id');
+    $query->execute(['id' => $id]);
+
+    $comment = $query->fetch();// tjrs stocker le resultat de la requette $query, avant de la retourner.
+    return  $comment;
+}
+
+function deletComment($id)
+{
+    $pdo = getPDO();
+    $query = $pdo->prepare('DELETE FROM comments WHERE id = :id');
+    $query->execute(['id' => $id]);
+
+}
+
 
 
 ?>
