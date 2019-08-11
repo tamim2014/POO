@@ -35,9 +35,11 @@ function findAllArticles()
 }
 
 /**
- * function findArticle(int $id)
+ * 
+ * function findArticle(int $id): on lui envoi un identifiant et il retourne l'article correspondant
  * je supprimme la specfication de type. pour eviter l'erreur suivante:
  * Catchable fatal error: Argument 1 passed to findArticle() must be an instance of int, integer given
+ * 
  */
 
 function findArticle($id)
