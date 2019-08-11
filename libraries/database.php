@@ -56,6 +56,18 @@ function findArticle($id)
 
 }
 
+function findAllComments($article_id)
+{
+    $pdo = getPDO();
+
+    $query = $pdo->prepare("SELECT * FROM comments WHERE article_id = :article_id");
+    $query->execute(['article_id' => $article_id]);
+    $commentaires = $query->fetchAll(); // fetchAll retourne un tableau
+
+    return $commentaires;
+    
+}
+
 
 
 ?>

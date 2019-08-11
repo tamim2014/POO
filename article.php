@@ -44,9 +44,11 @@ $article = findArticle($article_id);
  * 4. Récupération des commentaires de l'article en question
  * Pareil, toujours une requête préparée pour sécuriser la donnée filée par l'utilisateur (cet enfoiré en puissance !)
  */
-$query = $pdo->prepare("SELECT * FROM comments WHERE article_id = :article_id");
-$query->execute(['article_id' => $article_id]);
-$commentaires = $query->fetchAll();
+//$query = $pdo->prepare("SELECT * FROM comments WHERE article_id = :article_id");
+//$query->execute(['article_id' => $article_id]);
+//$commentaires = $query->fetchAll(); // fetchAll retourne un tableau
+
+$commentaires = findAllComments($article_id);
 
 /**
  * 5. On affiche 
