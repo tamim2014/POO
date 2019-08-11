@@ -32,6 +32,25 @@ function findAllArticles()
     $articles = $resultats->fetchAll();
 
     return $articles;
+}
+
+/**
+ * function findArticle(int $id)
+ * je supprimme la specfication de type. pour eviter l'erreur suivante:
+ * Catchable fatal error: Argument 1 passed to findArticle() must be an instance of int, integer given
+ */
+
+function findArticle($id)
+{
+    $pdo = getPDO();
+
+    $query = $pdo->prepare("SELECT * FROM articles WHERE id = :article_id");
+    // On exécute la requête en précisant le paramètre :article_id 
+    $query->execute(['article_id' => $id]);
+    // On fouille le résultat pour en extraire les données réelles de l'article
+    $article = $query->fetch();
+
+    return $article;
 
 }
 
