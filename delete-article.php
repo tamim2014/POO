@@ -8,6 +8,9 @@
  */
 require_once('libraries/database.php');
 require_once('libraries/utils.php');
+require_once('libraries/models/Article.php');// La class "Article.php" aulieu de la bib "database.php"
+
+$model = new Article();
 /**
  * 1. On vérifie que le GET possède bien un paramètre "id" (delete.php?id=202) et que c'est bien un nombre
  * 
@@ -26,7 +29,7 @@ $id = $_GET['id'];
  * 3. Vérification que l'article existe bel et bien
  */
 
-$article = findArticle($id);
+$article = $model->findArticle($id);
 if (!$article) {
     die("L'article $id n'existe pas, vous ne pouvez donc pas le supprimer !");
 }
@@ -35,7 +38,7 @@ if (!$article) {
  * 4. Réelle suppression de l'article (cet appel fait une connexion avant la suppressio. logique non? tu m'etonnes!!!)
  */
 
-deleteArticle($id);
+$model->deleteArticle($id);
 
 /**
  * 5. Redirection vers la page d'accueil
