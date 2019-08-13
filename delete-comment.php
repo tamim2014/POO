@@ -9,7 +9,6 @@
 
 require_once('libraries/database.php');
 require_once('libraries/utils.php');
-//require_once('libraries/models/Article.php');// La class "Article.php" aulieu de la bib "database.php"
 require_once('libraries/models/Comment.php');// La class "Comment.php" aulieu de la bib "database.php"
 
 $model = new Comment();
