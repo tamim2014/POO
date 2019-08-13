@@ -11,6 +11,9 @@ require_once('libraries/database.php');
 require_once('libraries/utils.php');
 //require_once('libraries/models/Article.php');// La class "Article.php" aulieu de la bib "database.php"
 require_once('libraries/models/Comment.php');// La class "Comment.php" aulieu de la bib "database.php"
+
+$model = new Comment();
+
 /**
  * 1. Récupération de l' "id" du paramètre en GET
  */
@@ -35,7 +38,7 @@ $pdo = getPDO();
  * 3. Vérification de l'existence du commentaire
  */
 
-$commentaire = findComment($id);
+$commentaire = $model->findComment($id);
 if (!$commentaire) {
     die("Aucun commentaire n'a l'identifiant $id !");
 }
@@ -48,7 +51,7 @@ if (!$commentaire) {
 //$commentaire = $query->fetch();
 $article_id = $commentaire['article_id'];
 
-deletComment($id); //
+$model->deletComment($id); 
 
 /**
  * 5. Redirection vers l'article en question
