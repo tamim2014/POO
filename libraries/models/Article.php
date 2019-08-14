@@ -13,6 +13,7 @@
 
 class Article extends Connexion
 {
+    protected $table = "articles"; //appelee par la fonction find() de la classe Connexion
 
    /**
     * Retourne la liste des aricles classes par date 
@@ -30,29 +31,7 @@ public function findAllArticles()
     return $articles;
 }
 
-/**
- * 
- * function find(int $id): on lui envoi un identifiant et il retourne l'article correspondant
- * 
- * je supprimme la specfication de type. pour eviter l'erreur suivante:
- * Catchable fatal error: Argument 1 passed to find() must be an instance of int, integer given
- * 
- * @param integer $id
- * @return void
- */
 
-public function find($id)
-{
-    
-
-    $query = $this->pdo->prepare("SELECT * FROM articles WHERE id = :article_id");
-    // On exécute la requête en précisant le paramètre :article_id 
-    $query->execute(['article_id' => $id]);
-    // On fouille le résultat pour en extraire les données réelles de l'article
-    $article = $query->fetch();
-
-    return $article;
-}
 
 /**
  *  Supprime un article dans la base grace a son identifiant

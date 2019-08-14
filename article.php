@@ -31,7 +31,7 @@ if (!$article_id) { die("Vous devez préciser un paramètre `id` dans l'URL !");
 /**
  *  2.Connexion à la base de données 
  *  3.Récupération de l'article en question
- *     $article = findArticle($article_id); // tableau contenant tous les champs d1 article ( cf libraries/database.php )
+ *     $article = find($article_id); // tableau contenant tous les champs d1 article ( cf libraries/database.php )
  *  4.Récupération des commentaires de l'article en question
  *     $commentaires = findAllComments($article_id); // tableau contenant tous les champs d1 commentaire ( cf libraries/database.php )
  *  5. On affiche 
