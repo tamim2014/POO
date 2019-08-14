@@ -12,6 +12,11 @@
  require_once('libraries/database.php'); // appel getPDO()
 
 class Article{
+    private $pdo;
+    public function __construct()
+    {
+        $this->pdo = getPDO();
+    }
    /**
     * Retourne la liste des aricles classes par date 
     *
@@ -21,7 +26,7 @@ public function findAllArticles()
 {
     $pdo = getPDO();
     // On utilisera ici la méthode query (pas besoin de préparation car aucune variable n'entre en jeu)
-    $resultats = $pdo->query('SELECT * FROM articles ORDER BY created_at DESC');
+    $resultats = $this->pdo->query('SELECT * FROM articles ORDER BY created_at DESC');
     // On fouille le résultat pour en extraire les données réelles
     $articles = $resultats->fetchAll();
 
@@ -41,9 +46,9 @@ public function findAllArticles()
 
 public function findArticle($id)
 {
-    $pdo = getPDO();
+    
 
-    $query = $pdo->prepare("SELECT * FROM articles WHERE id = :article_id");
+    $query = $this->pdo->prepare("SELECT * FROM articles WHERE id = :article_id");
     // On exécute la requête en précisant le paramètre :article_id 
     $query->execute(['article_id' => $id]);
     // On fouille le résultat pour en extraire les données réelles de l'article
@@ -60,8 +65,8 @@ public function findArticle($id)
  */
 function deleteArticle($id)
 {
-    $pdo = getPDO(); 
-    $query = $pdo->prepare('DELETE FROM articles WHERE id = :id');
+    
+    $query = $this->pdo->prepare('DELETE FROM articles WHERE id = :id');
     $query->execute(['id' => $id]);
 }
 

@@ -4,6 +4,12 @@ require_once('libraries/database.php');
 
 class Comment{
 
+private $pdo;
+public function __construct()
+{
+    $this->pdo = getPDO();
+}
+
 /**
  * Retourne la liste des commentaire d1 article
  * 
@@ -12,9 +18,9 @@ class Comment{
  */    
 public function findAllComments($article_id)
 {
-    $pdo = getPDO();
+  
 
-    $query = $pdo->prepare("SELECT * FROM comments WHERE article_id = :article_id");
+    $query = $ths->pdo->prepare("SELECT * FROM comments WHERE article_id = :article_id");
     $query->execute(['article_id' => $article_id]);
     $commentaires = $query->fetchAll(); // fetchAll retourne un tableau
 
@@ -31,8 +37,8 @@ public function findAllComments($article_id)
  */
 public function findComment($id)
 {
-    $pdo = getPDO();
-    $query = $pdo->prepare('SELECT * FROM comments WHERE id = :id');
+
+    $query = $this->pdo->prepare('SELECT * FROM comments WHERE id = :id');
     $query->execute(['id' => $id]);
 
     $comment = $query->fetch();// tjrs stocker le resultat de la requette $query, avant de la retourner.
@@ -47,8 +53,8 @@ public function findComment($id)
  */
 public function deletComment($id)
 {
-    $pdo = getPDO();
-    $query = $pdo->prepare('DELETE FROM comments WHERE id = :id');
+   
+    $query = $this->pdo->prepare('DELETE FROM comments WHERE id = :id');
     $query->execute(['id' => $id]);
 
 }
@@ -64,8 +70,8 @@ public function deletComment($id)
  */
 function insertComment($author,$content,$article_id)
 {
-    $pdo = getPDO();
-    $query = $pdo->prepare('INSERT INTO comments SET author = :author, content = :content, article_id = :article_id, created_at = NOW()');
+   
+    $query = $this->pdo->prepare('INSERT INTO comments SET author = :author, content = :content, article_id = :article_id, created_at = NOW()');
     $query->execute(compact('author', 'content', 'article_id'));
 }
 
