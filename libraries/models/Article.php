@@ -9,14 +9,11 @@
  * Des qualificateurs d'acces prefixent donc  les fonctions
  */
 
- require_once('libraries/database.php'); // appel getPDO()
+ require_once('libraries/models/Connexion.php'); // appel getPDO()
 
-class Article{
-    private $pdo;
-    public function __construct()
-    {
-        $this->pdo = getPDO();
-    }
+class Article extends Connexion
+{
+
    /**
     * Retourne la liste des aricles classes par date 
     *

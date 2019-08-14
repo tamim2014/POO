@@ -1,14 +1,10 @@
 <?php
 
-require_once('libraries/database.php');
+require_once('libraries/models/Connexion.php');
 
-class Comment{
-
-private $pdo;
-public function __construct()
+class Comment extends Connexion
 {
-    $this->pdo = getPDO();
-}
+
 
 /**
  * Retourne la liste des commentaire d1 article
@@ -20,7 +16,7 @@ public function findAllComments($article_id)
 {
   
 
-    $query = $ths->pdo->prepare("SELECT * FROM comments WHERE article_id = :article_id");
+    $query = $this->pdo->prepare("SELECT * FROM comments WHERE article_id = :article_id");
     $query->execute(['article_id' => $article_id]);
     $commentaires = $query->fetchAll(); // fetchAll retourne un tableau
 
