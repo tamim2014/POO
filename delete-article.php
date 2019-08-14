@@ -38,7 +38,7 @@ if (!$article) {
  * 4. Réelle suppression de l'article (cet appel fait une connexion avant la suppressio. logique non? tu m'etonnes!!!)
  */
 
-$model->deleteArticle($id);
+$model->delete($id);
 
 /**
  * 5. Redirection vers la page d'accueil

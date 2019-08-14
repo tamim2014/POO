@@ -4,7 +4,7 @@ require_once('libraries/models/Connexion.php');
 
 class Comment extends Connexion
 {
-    protected $table = "Comments"; //appelee par la fonction find() de la classe Connexion
+    protected $table = "comments"; //appelee par la fonction find() de la classe Connexion
 
     /**
      * Retourne la liste des commentaire d1 article
@@ -23,21 +23,6 @@ class Comment extends Connexion
         return $commentaires;   
     }
 
-
-    /**
-     *  Supprime un commentaire grace a son identifiant
-     * 
-     * @param integer $id
-     * @return void
-     */
-    public function deletComment($id)
-    {
-    
-        $query = $this->pdo->prepare('DELETE FROM comments WHERE id = :id');
-        $query->execute(['id' => $id]);
-
-    }
-
     /**
      *  Insere un commentaire dans la base de donnees
      * 
@@ -53,6 +38,5 @@ class Comment extends Connexion
         $query = $this->pdo->prepare('INSERT INTO comments SET author = :author, content = :content, article_id = :article_id, created_at = NOW()');
         $query->execute(compact('author', 'content', 'article_id'));
     }
-
 
 }

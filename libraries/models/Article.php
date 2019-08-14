@@ -39,7 +39,7 @@ public function findAllArticles()
  *  @param integer $id
  *  @return void
  */
-function deleteArticle($id)
+function delete($id)
 {
     
     $query = $this->pdo->prepare('DELETE FROM articles WHERE id = :id');

@@ -50,7 +50,7 @@ if (!$commentaire) {
 //$commentaire = $query->fetch();
 $article_id = $commentaire['article_id'];
 
-$model->deletComment($id); 
+$model->delete($id); 
 
 /**
  * 5. Redirection vers l'article en question
