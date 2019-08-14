@@ -32,16 +32,16 @@ public function findAllArticles()
 
 /**
  * 
- * function findArticle(int $id): on lui envoi un identifiant et il retourne l'article correspondant
+ * function find(int $id): on lui envoi un identifiant et il retourne l'article correspondant
  * 
  * je supprimme la specfication de type. pour eviter l'erreur suivante:
- * Catchable fatal error: Argument 1 passed to findArticle() must be an instance of int, integer given
+ * Catchable fatal error: Argument 1 passed to find() must be an instance of int, integer given
  * 
  * @param integer $id
  * @return void
  */
 
-public function findArticle($id)
+public function find($id)
 {
     
 

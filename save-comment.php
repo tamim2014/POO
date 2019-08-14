@@ -64,7 +64,7 @@ if (!$author || !$article_id || !$content) {
 $pdo = getPDO();
 
 
-$article = $articleModel->findArticle($article_id);
+$article = $articleModel->find($article_id);
 
 // Si rien n'est revenu, on fait une erreur
 if (!$article) {

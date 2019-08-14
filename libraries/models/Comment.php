@@ -31,7 +31,7 @@ public function findAllComments($article_id)
  * @param integer $id
  * @return array|bool le commentaire si on le trouve, false si on ne le trouve pas
  */
-public function findComment($id)
+public function find($id)
 {
 
     $query = $this->pdo->prepare('SELECT * FROM comments WHERE id = :id');

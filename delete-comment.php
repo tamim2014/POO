@@ -37,7 +37,7 @@ $pdo = getPDO();
  * 3. Vérification de l'existence du commentaire
  */
 
-$commentaire = $model->findComment($id);
+$commentaire = $model->find($id);
 if (!$commentaire) {
     die("Aucun commentaire n'a l'identifiant $id !");
 }
