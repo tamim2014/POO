@@ -68,25 +68,62 @@
 		
 		<section id="install">      
 			<h3>PHP Files & Structure</h3><hr class="notop">
-			<p>Le site contient 4 fichiers de base: <br>
-			    - <code>index.php</code> Interraction avec la Base de Donnees. Elle est definie dans le fichier <code>blogpoo.sql</code><br>
-				- <code>article.php</code><br>
-				- <code>delete-article.php</code> <br>
-				- <code>delete-comment.php</code> 
-			</p>	
-					
-			On a 2 dossiers:<code>libraries</code>, et  <code>templates</code>.<br><br>
-			Le dossier <code>libraries</code> contient:<br>
-			- Le fichier <code>libraries/database.php</code> pour la connexion a la base de donnee.<br>
-			- Le fichier <code>libraries/utils.php</code> , une bibliotheque. On y trouve entre autres, les fonction d'appel aux vues.<br><br>
-			Le dossier <code>templates</code> contient les vues suivantes:<br>
-			- Le fichier <code>templates/layout.html.php</code> vue globale{structure) de la page index(son model htm5),<br>
-			- Le fichier <code>templates/articles/index.html.php</code> vue modulaire et iterative. Presentation introductive de chaque article dans la page index ,<br>
-			- Le fichier <code>templates/articles/show.html.php</code> vue (structure) d'un article.<br><br>
+			Deux principaux dossiers :<code style="color:blue;">libraries</code> et  <code style="color:blue;">templates</code>.<br><br>
+			<h1><code style="color:blue;">libraries</code></h1>
+			<ul style="list-style-type:square;">
+				<li><code style="color:blue;">models</code> : Interraction avec la base de donn&eacute;es </li>
+				<li><code style="color:blue;">controllers</code> : Interraction avec l'utilisateur</li>
+				<li><code>database.php</code> Connexion &agrave; la base de donn&eacute;es</li>
+				<li><code>utils.php</code></code> definie 3 fonctions :
+					<div style = "margin-top: -20px;">
+						<ul style="list-style-type:circle;">
+							<li><code style="color: cornflowerblue;"> render_show(array $variables=[])</code>  appelle la vue d'un article et la vue de la page index</li>
+							<li> <code style="color: cornflowerblue;">render_index(array $variables=[])</code> appelle la vue de la listes des articles et la vue de la page index</li>
+							<li> <code style="color: cornflowerblue;">redirect($url)</code>  Redirection  [ vers la liste des articles ]  ou  [ vers un article ] </li>
+						</ul>
+				    </div> 
+
+				</li>
+			  </ul>
+			  <h1><code style="color:blue;">templates</code></h1>
+			  <ul style="list-style-type:square;">
+				  <li><code>layout.html.php</code> vue de la page index</li>
+				  <li><code style="color:blue;">articles</code> Contient les 2 vues suivantes :
+					<div style = "margin-top: -20px;">
+						<ul style="list-style-type:circle;">
+							<li><code>index.html.php</code> Vue iterative - liste des  articles</li>
+							<li><code>show.html.php</code> Vue d'un article</li>
+						</ul>
+				    </div>
+				  </li>
+			 </ul>	  
+			  
 						
 			<pre class="prettyprint lines" >
 			     <div  style="text-align:left; margin-top:0;"><img src="img/diagram.png" /> </div>
-            </pre>
+			</pre>
+			
+			    <p>
+					<h2><code style="color:blue; font-size: 20px; font-style: oblique;" > models</code> : Interraction avec la base de donnees </h2>
+					- <code>models/Connexion.php</code> modelisations des comportement pour manipuler les donnees de la base<br>
+					- <code>models/Article.php</code> Objet modelisant la table article <br>
+					- <code>models/Comment.php</code> Objet modelisant la table comment <br>
+					- <code>models/Users.php</code> Objet modelisant la table users <br>
+					- <code>blogpoo.sql</code> Definition de la base de donnees <br><br>
+				
+					Ces fichiers contiennent les models de comportement(connexion,lecture,ecriture)<br>
+					pour objets presents dans la base de donnees(article,comment,users).<br>
+					chaque table de la base est modelis&eacute;e par un objet(classe Article, classe Comment,classe Users)
+				</p>
+				<p>
+					<h2><code style="color:blue; font-size: 20px; font-style: oblique;">controllers</code> : Interraction avec l'utilisateur</h2>
+					- <code>index.php</code> affiche la liste des articles<br>
+					- <code>article.php</code> affiche un article est ses commentaires<br>
+					- <code>delete-article.php</code>Permet &agrave; l'utilisateur de supprimer un article <br>
+					- <code>delete-comment.php</code> Permet &agrave; l'utilisateur de supprimer un commentaire <br>
+					- <code>save-comment.php</code> Permet &agrave; l'utilisateur d'ajouter un commentaire sur un article <br>
+	
+				</p>
 			<p>If you would like to edit the color, font, or style of any elements in one of these columns, you would do the following:</p>
 			<ul>
 				<li><strong>Colors:</strong> autoCorrect is necessary to change the foreground color (Ctrl + F);</li>
