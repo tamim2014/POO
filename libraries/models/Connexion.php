@@ -57,7 +57,7 @@ class Connexion {
     *
     * @return array
     */
-    public function findAll()
+    abstract public function findAll()
     {       
       
         if (@in_array("created_at", $this->table )){
