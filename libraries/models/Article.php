@@ -33,18 +33,4 @@ public function findAllArticles()
 
 
 
-/**
- *  Supprime un article dans la base grace a son identifiant
- * 
- *  @param integer $id
- *  @return void
- */
-function delete($id)
-{
-    
-    $query = $this->pdo->prepare('DELETE FROM articles WHERE id = :id');
-    $query->execute(['id' => $id]);
-}
-
-
 }
