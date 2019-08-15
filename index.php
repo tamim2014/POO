@@ -9,23 +9,30 @@
 require_once('libraries/database.php'); // interaction avec  la base de donnee
 require_once('libraries/utils.php'); // appel des vues
 require_once('libraries/models/Article.php');// La class "Article.php" aulieu de la bib "database.php"
+require_once('libraries/models/User.php');
 
+
+/**
+ * TEST: Application findAll sur l'Objet models/User.php
+ 
+  $userModel = new User();
+  $users = $userModel->findAll();
+  var_dump($users);
+  dies();
+ */
+
+
+// Application de findAll() sur l'Objet models/Article.php
 $model = new Article(); //instance de la class Article
+$articles = $model->findAll(); 
 
 
-/**
-* 1. Connexion à la base de données:  getPDO() dans la function findAll()
-* 2. Récupération des articles
-*
-* cf database.php  sinon la classe  models/Article.php
-*/
-
-//$articles = findAll(); //cf database.php
-$articles = $model->findAll(); //cf la classe  models/Article.php
-
-/**
-* 3. Affichage
-*/
+// Affichage
 $pageTitle = "Accueil";
 render_index( compact( 'pageTitle' ,'articles'  )); // vue de la page d'accueil: index.html.php
+
+
+
+
+
 

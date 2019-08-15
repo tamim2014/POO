@@ -9,7 +9,7 @@ require_once('libraries/database.php');
 class Connexion {
 
     protected $pdo; // connexion a la base
-    protected $table ; // pour remplacer  la table articles par la variables {$this->table}
+    protected  $table ; // pour remplacer  la table articles par la variables {$this->table}
 
     public function __construct()
     {
@@ -59,8 +59,13 @@ class Connexion {
     */
     public function findAll()
     {       
-        // On utilisera ici la méthode query (pas besoin de préparation car aucune variable n'entre en jeu)
-        $resultats = $this->pdo->query("SELECT * FROM {$this->table}  ORDER BY created_at DESC");
+      
+        if (@in_array("created_at", $this->table )){
+            $resultats = $this->pdo->query("SELECT * FROM {$this->table} ORDER BY created_at DESC");          
+        }else{
+            $resultats = $this->pdo->query("SELECT * FROM {$this->table}");         
+        }
+        
         // On fouille le résultat pour en extraire les données réelles
         $articles = $resultats->fetchAll();
 
