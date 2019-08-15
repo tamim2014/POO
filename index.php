@@ -14,14 +14,14 @@ $model = new Article(); //instance de la class Article
 
 
 /**
-* 1. Connexion à la base de données:  getPDO() dans la function findAllArticles()
+* 1. Connexion à la base de données:  getPDO() dans la function findAll()
 * 2. Récupération des articles
 *
 * cf database.php  sinon la classe  models/Article.php
 */
 
-//$articles = findAllArticles(); //cf database.php
-$articles = $model->findAllArticles(); //cf la classe  models/Article.php
+//$articles = findAll(); //cf database.php
+$articles = $model->findAll(); //cf la classe  models/Article.php
 
 /**
 * 3. Affichage

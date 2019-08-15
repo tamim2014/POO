@@ -52,5 +52,20 @@ class Connexion {
         $query->execute(['id' => $id]);
     }
 
+   /**
+    * Retourne la liste des aricles classes par date 
+    *
+    * @return array
+    */
+    public function findAll()
+    {       
+        // On utilisera ici la méthode query (pas besoin de préparation car aucune variable n'entre en jeu)
+        $resultats = $this->pdo->query("SELECT * FROM {$this->table}  ORDER BY created_at DESC");
+        // On fouille le résultat pour en extraire les données réelles
+        $articles = $resultats->fetchAll();
+
+        return $articles;
+    }
+
 
 }
