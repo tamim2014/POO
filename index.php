@@ -13,23 +13,25 @@ require_once('libraries/models/User.php');
 
 
 /**
- * TEST: Application findAll sur l'Objet models/User.php
+ * TEST: Application de findAll() sur l'Objet models/User.php
  
   $userModel = new User();
   $users = $userModel->findAll();
+
   var_dump($users);
   dies();
  */
 
 
+
 // Application de findAll() sur l'Objet models/Article.php
-$model = new Article(); //instance de la class Article
+$model = new Article(); 
 $articles = $model->findAll(); 
 
 
 // Affichage
 $pageTitle = "Accueil";
-render_index( compact( 'pageTitle' ,'articles'  )); // vue de la page d'accueil: index.html.php
+render_index( compact( 'pageTitle' ,'articles'  )); 
 
 
 
