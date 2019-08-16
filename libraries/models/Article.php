@@ -1,5 +1,7 @@
 <?php
 
+namespace Models;
+
 /**
  * Quant il s'agit d'acces aux donnees on parle de "model de donnees"
  * 

@@ -1,5 +1,7 @@
 <?php
 
+namespace Models;
+
 require_once('libraries/models/Connexion.php');
 
 class Comment extends Connexion

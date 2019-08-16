@@ -1,4 +1,6 @@
 <?php
+
+namespace Models;
 /**
  * Cette classe est le model d'access aux donnees
  * Dailleurs Lior l'a applee  Model.php
