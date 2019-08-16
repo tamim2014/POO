@@ -1,0 +1,131 @@
+
+
+#documenter_content{
+	position:absolute;
+	right:18px;
+	left:218px;
+	padding-left:10px;
+	padding-bottom:800px;
+	min-height:100%;
+	height:auto;
+    z-index:1;
+    
+   
+
+}
+
+#documenter_content .warning{
+    background-image:url(img/warning.png) !important;
+    background-repeat:no-repeat !important;
+    background-position: 8px 11px !important;
+}
+#documenter_content .info{
+    background-image:url(img/info.png) !important;
+    background-repeat:no-repeat !important;
+    background-position: 8px 11px !important;
+}
+#documenter_content pre{
+    background-image:url(img/pre_bg.png) !important;
+    line-height:19px;
+}
+
+#documenter_content table th, #documenter_content table td{
+	padding:3px;
+	text-align:left;
+}
+#documenter_content code, #documenter_content pre{
+	font-family:"Courier New", Courier, monospace;
+	font-size:12px;
+}
+#documenter_content .warning{
+	padding:10px 10px 10px 30px;
+	border:1px solid #D5D458;
+	background-color:#F0FEB1;
+	background-image:url(img/warning.png);
+	background-repeat:no-repeat;
+	background-position: 8px 11px;
+}
+#documenter_content .info{
+	padding:10px 10px 10px 30px;
+	border:1px solid #6AB3FF;
+	background-color:#A3D0FF;
+	background-image:url(img/info.png);
+	background-repeat:no-repeat;
+	background-position: 8px 11px;
+}
+
+
+#documenter_content section{
+	padding-top:70px;
+}
+#documenter_content h1{
+	font-size:30px;
+	font-weight:700;
+}
+#documenter_content h2{
+	font-size:20px;
+	margin-bottom:18px;
+	font-weight:100;
+}
+#documenter_content h3{
+	font-size:26px;
+	margin:18px 0 0;
+	font-weight:100;
+}
+#documenter_content h4{
+	font-size:20px;
+	margin:18px 0;
+	font-weight:100;
+}
+#documenter_content h5{
+	font-size:16px;
+	margin:18px 0;
+	font-weight:100;
+}
+#documenter_content h6{
+	font-size:14px;
+	margin:18px 0;
+	font-weight:100;
+}
+#documenter_content p{
+	margin:18px 0;
+}
+#documenter_content ol li{
+	list-style:decimal;
+	margin-left:56px !important;
+}
+#documenter_content ul li{
+	list-style:square;
+	margin-left:36px;
+}
+#documenter_content dl dt{
+	padding-top:12px;
+	font-weight:700;
+	font-size:14px;
+}
+#documenter_content dl dd{
+	padding-top:3px;
+	margin-left:18px;
+}
+#documenter_content table{
+	border-collapse:collapse;
+}
+#documenter_content table th{
+	font-weight:700;
+}
+
+
+
+
+code {
+    background-color: #F7F7F9;
+    border: 1px solid #E1E1E8;
+	border-radius:3px;
+    color: #DD1144;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
+a {
+	color: blue;
+
+}
