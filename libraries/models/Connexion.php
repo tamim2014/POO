@@ -6,7 +6,7 @@
 
 require_once('libraries/database.php');
 
-class Connexion {
+abstract class Connexion {
 
     protected $pdo; // connexion a la base
     protected  $table ; // pour remplacer  la table articles par la variables {$this->table}
@@ -57,7 +57,7 @@ class Connexion {
     *
     * @return array
     */
-    abstract public function findAll()
+    public function findAll()
     {       
       
         if (@in_array("created_at", $this->table )){
