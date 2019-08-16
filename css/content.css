@@ -10,8 +10,6 @@
 	height:auto;
     z-index:1;
     
-   
-
 }
 
 #documenter_content .warning{
@@ -129,3 +127,11 @@ a {
 	color: blue;
 
 }
+
+.resume {
+	background-color: #efefef; /* #e7f3fe; */
+	border-left: 6px solid silver;
+
+	margin-bottom: 15px;
+	padding: 4px 12px;
+  }
