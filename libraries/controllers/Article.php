@@ -10,6 +10,13 @@ require_once('libraries/models/User.php');
 
 class Article {
 
+    protected $model;
+
+    public function __construct(){
+        $this->model = new  \Models\Article();
+    }
+
+
     public function index(){
         /**
          * 
@@ -24,8 +31,7 @@ class Article {
         */
 
         // Application de findAll() sur l'Objet models/Article.php
-        $model = new \Models\Article(); 
-        $articles = $model->findAll(); 
+        $articles = $this->model->findAll(); 
         // Affichage
         $pageTitle = "Accueil";
         render_index( compact( 'pageTitle' ,'articles'  )); 
@@ -33,7 +39,6 @@ class Article {
 
     public function show(){
 
-        $articleModel = new \Models\Article();
         $commentModel = new \Models\Comment();
 
         //1. Récupération du param "id" et vérification de celui-ci 
@@ -53,7 +58,7 @@ class Article {
          *  5. On affiche 
          */
 
-        $article = $articleModel->find($article_id); //2. et 3. tableau contenant tous les champs d1 article ( cf libraries/models/Article.php )
+        $article = $this->model->find($article_id); //2. et 3. tableau contenant tous les champs d1 article ( cf libraries/models/Article.php )
         $commentaires =$commentModel->findAllComments($article_id);//4.
 
         $pageTitle = $article['title'];// 5.
@@ -62,7 +67,6 @@ class Article {
 
     public function delete(){
 
-        $model = new \Models\Article();
         /**
          * 1. On vérifie que le GET possède bien un paramètre "id" (delete.php?id=202) et que c'est bien un nombre
          * 
@@ -77,14 +81,14 @@ class Article {
          * 2. Connexion à la base de données avec PDO
          * 3. Vérification que l'article existe bel et bien
          */
-        $article = $model->find($id);
+        $article = $this->model->find($id);
         if (!$article) {
             die("L'article $id n'existe pas, vous ne pouvez donc pas le supprimer !");
         }
         /**
          * 4. Réelle suppression de l'article (cet appel fait une connexion avant la suppressio. logique non? tu m'etonnes!!!)
          */
-        $model->delete($id);
+        $this->model->delete($id);
         /**
          * 5. Redirection vers la page d'accueil
          * 
