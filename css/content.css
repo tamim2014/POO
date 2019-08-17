@@ -132,8 +132,9 @@ a {
 	background-color: #DDDDDD; /*#efefef; #e7f3fe; */
 	border-left: 6px solid  gray;
 
-	margin-bottom: 15px;
-	padding: 4px 12px;
+	margin-bottom: 1px;
+	/* padding: 8px 12px; */
+	padding: 8px 12px 4px 12px;
 }
 
 
@@ -165,3 +166,7 @@ a {
 .pveha {
 	width:99.9%;
 }
+
+
+
+
