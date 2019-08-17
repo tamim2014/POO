@@ -51,13 +51,12 @@ class Comment extends Constructeur
             die("Ho ! L'article $article_id n'existe pas boloss !");
         }
 
-
         $this->model->insertComment($author, $content, $article_id);
 
-        header('Location: article.php?id=' . $article_id);
-        exit();
-
-
+      
+       // redirect('Location: article.php?id='.$article_id);
+         header('Location: article.php?id=' . $article_id);  exit();
+       
     }
 
     public function delete(){
@@ -78,9 +77,16 @@ class Comment extends Constructeur
 
         $article_id = $commentaire['article_id'];
         $this->model->delete($id); 
-        // redirect("Location: article.php?id=" . $article_id);
-        header("Location: article.php?id=" . $article_id);
-        exit();
+        
+      /**
+       *  sur la page article.php la fonction redirect() ne fonctionne pas
+       *  ni apres ajou d1 commentaire, ni apres la supression d1 commentaire
+       * 
+       *  redirect("Location: article.php?id=" . $article_id);
+       */
+   
+       header("Location: article.php?id=" . $article_id); exit();
+        
 
 
     }

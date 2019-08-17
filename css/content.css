@@ -134,4 +134,34 @@ a {
 
 	margin-bottom: 15px;
 	padding: 4px 12px;
-  }
+}
+
+
+.talazouz {
+	padding:50px; 
+	margin-top:20px; 
+	background-color:#DDDDDD;
+}
+
+.yissima  { 
+	  background: #DDDDDD;  	
+	  z-index:2;
+	  box-shadow:
+	  0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset,
+	  0px 2px 2px 0px rgba(255, 255, 255, 0.5);
+	  padding:0px;
+}
+
+.wendo {
+	width:99.3%;
+	margin:1px;
+}
+
+.hindri{
+	width:99%; 
+	margin:1px; 
+}
+
+.pveha {
+	width:99.9%;
+}

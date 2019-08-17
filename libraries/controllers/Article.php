@@ -89,10 +89,8 @@ class Article extends Constructeur
         /**
          * 5. Redirection vers la page d'accueil
          * 
-         * redirect("index.php");  -------------pourquoi cette fonction bug ?
-         *                         -----------parce qu'il fallait pas specifier de type dans l'rgument de la fonction lors de sa definition
          */
-        header("Location: index.php");
-        exit();       
+        
+        redirect("index.php");
     }
 }
