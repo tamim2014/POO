@@ -16,7 +16,7 @@
         <blockquote>
             <em><?= $commentaire['content'] ?></em>
         </blockquote>
-        <a href="index.php?controller=comment&tak=delete&id=<?= $commentaire['id'] ?>" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer ce commentaire ?!`)">Supprimer</a>
+        <a href="index.php?controller=comment&task=delete&id=<?= $commentaire['id'] ?>" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer ce commentaire ?!`)">Supprimer</a>
     <?php endforeach ?>
 <?php endif ?>
 <div class="talazouz" >

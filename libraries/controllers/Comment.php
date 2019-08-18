@@ -36,7 +36,7 @@ class Comment extends Constructeur
 
         $this->model->insertComment($author, $content, $article_id);     
        //  \Http::redirect('Location: article.php?id='.$article_id);
-         header('Location: article.php?id=' . $article_id);  exit();      
+         header('Location: index.php?controller=article&task=show&id=' . $article_id);  exit();      
     }
 
 
@@ -62,7 +62,7 @@ class Comment extends Constructeur
        *  ni apres ajou d1 commentaire, ni apres la supression d1 commentaire
        */
        // \Http::redirect("Location: article.php?id=" . $article_id);
-       header("Location: article.php?id=" . $article_id); exit();
+       header("Location: index.php?controller=article&task=show&id=" . $article_id); exit();
         
     }
 
