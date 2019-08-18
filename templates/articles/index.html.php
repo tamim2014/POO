@@ -3,7 +3,7 @@
 <?php foreach ($articles as $article) : ?>
 
 <div  class="resume" style="width:20%; float:left;  clear:both; "  >
-   <!-- <img src="<?= $article['photo'] ?>" style="width:100%; height:124px;" alt="" /> -->
+   <!-- <img src="<?= $article['photo'] ?>"  alt="" /> -->
    <img src="img/test.png" style="width:100%; height:124px;" alt="" />
 </div>
 

@@ -63,9 +63,9 @@ abstract class Connexion {
     {       
       
         if (@in_array("created_at", $this->table )){
-            $resultats = $this->pdo->query("SELECT * FROM {$this->table} ORDER BY created_at DESC");          
+            $resultats = $this->pdo->query("SELECT * FROM {$this->table} ");          
         }else{
-            $resultats = $this->pdo->query("SELECT * FROM {$this->table}");         
+            $resultats = $this->pdo->query("SELECT * FROM {$this->table} ORDER BY created_at DESC");         
         }
         
         // On fouille le résultat pour en extraire les données réelles
