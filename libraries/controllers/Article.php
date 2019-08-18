@@ -2,10 +2,6 @@
 
 namespace Controllers;
 
-
-require_once('libraries/utils.php'); // appel des vues
-
-
 class Article extends Constructeur
 {
 
@@ -28,7 +24,7 @@ class Article extends Constructeur
         $articles = $this->model->findAll(); 
         // Affichage
         $pageTitle = "Accueil";
-        render_index( compact( 'pageTitle' ,'articles'  )); 
+        @\Renderer::render_index( compact( 'pageTitle' ,'articles'  )); 
     }
 
     public function show(){
@@ -56,7 +52,7 @@ class Article extends Constructeur
         $commentaires =$commentModel->findAllComments($article_id);//4.
 
         $pageTitle = $article['title'];// 5.
-        render_show( compact( 'pageTitle' ,'article' ,'commentaires' , 'article_id' ));// 5.               
+        @\Renderer::render_show( compact( 'pageTitle' ,'article' ,'commentaires' , 'article_id' ));// 5.               
     }
 
     public function delete(){
@@ -88,6 +84,6 @@ class Article extends Constructeur
          * 
          */
         
-        redirect("index.php");
+        \Http::redirect("index.php");
     }
 }

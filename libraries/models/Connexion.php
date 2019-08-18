@@ -4,9 +4,10 @@ namespace Models;
 /**
  * Cette classe est le model d'access aux donnees
  * Dailleurs Lior l'a applee  Model.php
+ * 
+ * require_once('libraries/database.php');| desormais se fait par autoloading
  */
 
-require_once('libraries/database.php');
 
 abstract class Connexion {
 
@@ -15,11 +16,10 @@ abstract class Connexion {
 
     public function __construct()
     {
-        $this->pdo = getPDO();
+        $this->pdo = \Database:: getPDO(); //$this->pdo = getPDO();
     }
 
-    /**
-     * 
+    /** 
      * function find(int $id): on lui envoi un identifiant et il retourne l'article ou le commentaire correspondant
      * 
      * je supprimme la specfication de type. pour eviter l'erreur suivante:
@@ -42,7 +42,7 @@ abstract class Connexion {
     }
 
     /**
-     *  peut Supprimer un article ou un commentaire dans la base grace a son identifiant
+     *  Supprimer un article ou un commentaire dans la base grace a son identifiant
      * 
      *  @param integer $id
      *  @return void
