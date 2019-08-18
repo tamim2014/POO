@@ -16,11 +16,11 @@
         <blockquote>
             <em><?= $commentaire['content'] ?></em>
         </blockquote>
-        <a href="delete-comment.php?id=<?= $commentaire['id'] ?>" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer ce commentaire ?!`)">Supprimer</a>
+        <a href="index.php?controller=comment&tak=delete&id=<?= $commentaire['id'] ?>" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer ce commentaire ?!`)">Supprimer</a>
     <?php endforeach ?>
 <?php endif ?>
 <div class="talazouz" >
-    <form action="save-comment.php" method="POST" class="yissima" > 
+    <form action="index.php?controller=comment&task=insert" method="POST" class="yissima" > 
         <input class="wendo"  type="text" name="author" placeholder="Votre pseudo !"> 
         <textarea class="hindri"  name="content" id="" cols="30" rows="10" placeholder="Votre commentaire ..."></textarea>       
         <input  type="hidden" name="article_id" value="<?= $article_id ?>">
