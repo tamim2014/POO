@@ -7,7 +7,7 @@
  * Puis on le supprimera !
  */
 
-require_once('libraries/controllers/Comment.php'); 
+require_once('libraries/autoload.php'); 
 
 $controller = new \Controllers\Comment();
 $controller->delete();

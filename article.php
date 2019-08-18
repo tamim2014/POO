@@ -12,7 +12,7 @@
  */
 
  
-require_once('libraries/controllers/Article.php'); 
+require_once('libraries/autoload.php'); //require_once('libraries/controllers/Article.php'); 
 
 $controller = new \Controllers\Article();
 $controller->show();

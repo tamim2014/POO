@@ -11,7 +11,7 @@ namespace Models;
  * Des qualificateurs d'acces prefixent donc  les fonctions
  */
 
- require_once('libraries/models/Connexion.php'); // appel getPDO()
+ //require_once('libraries/models/Connexion.php'); // appel getPDO()
 
 class Article extends Connexion
 {

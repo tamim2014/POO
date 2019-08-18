@@ -4,10 +4,7 @@ namespace Controllers;
 
 
 require_once('libraries/utils.php'); // appel des vues
-require_once('libraries/controllers/Constructeur.php'); // on a mis le constructeur ici
-require_once('libraries/models/Article.php');// La class "Article.php" aulieu de la bib "database.php"
-require_once('libraries/models/Comment.php');
-require_once('libraries/models/User.php');
+
 
 class Article extends Constructeur
 {

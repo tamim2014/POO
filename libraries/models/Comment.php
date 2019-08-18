@@ -2,7 +2,7 @@
 
 namespace Models;
 
-require_once('libraries/models/Connexion.php');
+//require_once('libraries/models/Connexion.php');
 
 class Comment extends Connexion
 {
