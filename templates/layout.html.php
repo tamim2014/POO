@@ -21,6 +21,8 @@
 			<li><a href="#">Rente immobilière</a></li>
             <li><a href="#">Muses</a></li>
             <li><a href="documentation/index.html">Documentation du projet</a></li>
+            <!-- <li><a href="index.php?controller=article&task=show&id=<?= $article['id'] ?>">Admin</a></li> -->
+            <li><a href="index.php?controller=article&task=newarticle">Admin</a></li>
 		</ol>
 		<div id="documenter_copyright">Programmation Orientee Objet<br></div>
 	</div>
