@@ -83,10 +83,7 @@ class Article extends Constructeur
         if (!empty($_POST['created_at'])) {
             $created_at = $_POST['created_at'];
         }
-          
-        //1.On specifie le nom du fichier
-        //
-         
+                 
         $nomPhoto = null;
         $fichierTempo = null;
         if (!empty($_POST['photo']) || !empty($_FILES['photo'])  ) {

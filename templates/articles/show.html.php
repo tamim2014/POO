@@ -1,5 +1,5 @@
-<!-- <img src="<?= $article['photo'] ?>" style="width:100%; height:300px; margin-top:2px; " alt="" /> -->
-<img src="img/test.png" style="width:100%; height:300px; margin-top:2px; " alt="" />
+ 
+<img src="img/<?php echo( $article['photo']); ?>" style="width:100%; height:300px; margin-top:2px;" alt="" /> 
 <h1><?= $article['title'] ?></h1>
 <small>Ecrit le <?= $article['created_at'] ?></small>
 <p><?= $article['introduction'] ?></p>

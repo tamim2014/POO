@@ -3,7 +3,7 @@
 /**
  * On transfert ici les fonction de rendu qui ete dans le fichier utils.php
  * 
- * Affichage d1 template en injectant HTML les variables
+ * Affichage d1 template en injectant  les variables HTML
  * 
  * @param array $variable
  * @return void
@@ -37,7 +37,7 @@
     {
         extract($variables); 
         ob_start(); 
-        require('templates/articles/addArticle.html.php'); // vue de l page d'accueil
+        require('templates/articles/addArticle.html.php'); 
         $pageContent = ob_get_clean(); 
 
         require('templates/layout.html.php');
