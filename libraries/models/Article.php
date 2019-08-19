@@ -13,26 +13,19 @@ namespace Models;
 
  //require_once('libraries/models/Connexion.php'); // appel getPDO()
 
+ 
+
 class Article extends Connexion
 {
     protected $table = "articles"; //appelee par la fonction find() de la classe Connexion
 
-    /**
-     *  Insere un article dans la base de donnees
-     * 
-     * @param string $title
-     * @param string $content
-     * @param integer $article_id
-     * ...
-     * 
-     * @return void
-     */
-   
-    function insertArticle($title, $slug, $introduction, $content, $created_at, $nomPhoto)
+    public function insertArticle($title, $slug, $introduction, $content, $created_at, $nomPhoto)
     {
-    
+        require_once('templates/articles/addArticle.html.php');
         $query = $this->pdo->prepare('INSERT INTO articles SET title = :title, slug = :slug, introduction = :introduction, content = :content, created_at = NOW(), photo = :nomPhoto');
         $query->execute(compact('title', 'slug', 'introduction', 'content', 'creted_at', 'nomPhoto' ));
         
     }
+
+
 }

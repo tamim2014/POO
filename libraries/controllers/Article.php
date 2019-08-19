@@ -85,22 +85,25 @@ class Article extends Constructeur
         }
           
         //1.On specifie le nom du fichier
+        //
          
         $nomPhoto = null;
-        if (!empty($_POST['photo'])) {
-            $nomPhoto = $_FILES['photo']['name'];//$_FILES['name de l'input']['name du fichier à importer']           
-        }
-        //2.On spécifie le chemin du fichier
         $fichierTempo = null;
-        if (!empty($_FILES['photo'])) {
-           $fichierTempo = $_FILES['photo']['tmp_name'];// $_FILES['name de l'input']['path du ficher ']
-    }
-        //3.On importe le fichier
-        move_uploaded_file($fichierTempo,'./img/'.$nomPhoto);
+        if (!empty($_POST['photo']) || !empty($_FILES['photo'])  ) {
+            //1.On specifie le nom du fichier
+            $nomPhoto = $_FILES['photo']['name'];//$_FILES['name de l'input']['name du fichier à importer'] 
+            //2.On spécifie le chemin du fichier
+            
+            $fichierTempo = $_FILES['photo']['tmp_name'];// $_FILES['name de l'input']['path du ficher '] 
+        
+            //3.On importe le fichier   
+            move_uploaded_file($fichierTempo, "C:\wamp64\www\POO\img\\".$nomPhoto);       
+        }
+
 
         $this->model->insertArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto ); 
 
-
+        @\Renderer::render_saisie( compact( 'title' ,'slug' ,'introduction' , 'content', 'created_at', 'nomPhoto' ));
         //Redirection 
         //header("location:index.php");  exit();          
     }

@@ -32,4 +32,15 @@
         require('templates/layout.html.php');
     }
 
+    //vue de la page de saisie d1 article
+    public function render_saisie( array $variables=[] )
+    {
+        extract($variables); 
+        ob_start(); 
+        require('templates/articles/addArticle.html.php'); // vue de l page d'accueil
+        $pageContent = ob_get_clean(); 
+
+        require('templates/layout.html.php');
+    }
+
  }
