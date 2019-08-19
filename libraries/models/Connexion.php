@@ -75,4 +75,15 @@ abstract class Connexion {
     }
 
 
+    
+    public function insertArticle($title, $slug, $introduction, $content, $created_at, $nomPhoto)
+    {
+       
+        
+        $query = $this->pdo->prepare("INSERT INTO {$this->table} SET title = :title, slug = :slug, introduction = :introduction, content = :content, created_at = NOW(), photo = :nomPhoto");
+        @$query->execute(compact('title', 'slug', 'introduction', 'content', 'creted_at', 'nomPhoto' ));
+        
+    }
+
+
 }

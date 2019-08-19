@@ -11,6 +11,7 @@ spl_autoload_register(function($className){
 
      $className = str_replace("\\","/",$className);
      // var_dump($className); //test2
+     $className = lcfirst( $className); 
     
      require_once("libraries/$className.php"); //OK
 
