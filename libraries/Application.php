@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Formalisation des fonctionnalites (actions utilisateur)
+ * 
+ * article.php :        affiche la liste des articles
+ * delete-article.ph :  supprimer un article
+ * save-comment.php :   enregistrer un commentaire
+ * delete-comment.php : supprimer un commentaire
+ * 
+ */
+
 class Application 
 {
     public static function process(){
@@ -14,12 +24,10 @@ class Application
             $task = $_GET['task'];
         }
         
-
-
         $controllerName = "\controllers\\".$controllerName;
 
-        $controller = new  $controllerName();
-        $controller->$task();
+        $controller = new  $controllerName(); // $controller = new   controllers/Article();
+        $controller->$task();                 // $controller -> index();
     }
 
    
