@@ -27,7 +27,7 @@ class Application
         $controllerName = "\controllers\\".$controllerName;
 
         $controller = new  $controllerName(); // $controller = new   controllers/Article();
-        $controller->$task();                 // $controller -> index();
+        $controller->$task();                 
     }
 
    

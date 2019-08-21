@@ -4,16 +4,13 @@ namespace Controllers;
 
 class New_article extends Constructeur
 {
-
-    protected $modelName = \Models\New_article::class; 
+    protected $modelName = \Models\New_article::class;      
        
+    public function newarticle() {
 
-       // upload_photo/SaveEtudiant.php
-       public function newarticle() {
+        //$articleModel = new \Models\New_article(); 
 
-        $articleModel = new \Models\New_article(); 
-
-        $title = null;
+        $title = null; 
         if (!empty($_POST['title'])  ) {  $title = $_POST['title']; }
         $slug = null;
         if (!empty($_POST['slug'])) { $slug = $_POST['slug']; }
@@ -31,11 +28,14 @@ class New_article extends Constructeur
             //2.On spécifie le chemin du fichier           
             $fichierTempo = $_FILES['photo']['tmp_name'];// $_FILES['name de l'input']['path du ficher ']        
             //3.On importe le fichier   
-            move_uploaded_file($fichierTempo, "C:\wamp64\www\POO\img\\".$nomPhoto);  }          
-        $this->model->insertArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto ); 
-        // @\Renderer::render_saisie( compact( 'title' ,'slug' ,'introduction' , 'content', 'created_at', 'nomPhoto' ));
-        header("location:index.php");  exit();     
+            move_uploaded_file($fichierTempo, "C:\wamp64\www\POO\img\\".$nomPhoto);  
+        } 
+        // appel de libraries/models/New_article/insertArticle() 
+        if($title && $slug && $introduction && $content )  {      
+            $this->model->insertArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto ) ; 
+            header("location:index.php");  exit();
+            // comment redireger vers le nouvel article ?  
+            //header('Location: index.php?controller=article&task=show&id=' . $article_id);  exit();     
+        }     
     }
-        //Redirection 
-        //header("location:index.php");  exit(); 
 }
