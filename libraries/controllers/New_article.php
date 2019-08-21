@@ -7,9 +7,7 @@ class New_article extends Constructeur
     protected $modelName = \Models\New_article::class;      
        
     public function newarticle() {
-
         //$articleModel = new \Models\New_article(); 
-
         $title = null; 
         if (!empty($_POST['title'])  ) {  $title = $_POST['title']; }
         $slug = null;
@@ -32,10 +30,7 @@ class New_article extends Constructeur
         } 
         // appel de libraries/models/New_article/insertArticle() 
         if($title && $slug && $introduction && $content )  {      
-            $this->model->insertArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto ) ; 
-            header("location:index.php");  exit();
-            // comment redireger vers le nouvel article ?  
-            //header('Location: index.php?controller=article&task=show&id=' . $article_id);  exit();     
-        }     
+            $this->model->insertArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto ) ;  
+        }       
     }
 }
