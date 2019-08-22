@@ -39,6 +39,8 @@ class Comment extends Constructeur
          header('Location: index.php?controller=article&task=show&id=' . $article_id);  exit();      
     }
 
+  
+
 
 
     public function delete(){
