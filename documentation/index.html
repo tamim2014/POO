@@ -19,7 +19,8 @@
 	
 	<script src="js/jquery.1.6.4.js"></script>
 	
-	<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+	<!-- <script src="js/jquery.scrollTo-1.4.2-min.js"></script> -->   
+	<script src="js/scroll/jquery.smoothscroll.min.js"></script>
 	<script src="js/jquery.easing.js"></script>
 	<script src="js/prettify.js"></script>	
 	<script>document.createElement('section');var duration=450,easing='easeOutExpo';</script>
@@ -39,6 +40,30 @@
 		#documenter_sidebar ol a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
 		#documenter_sidebar ol a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
 		#documenter_copyright{display:block !important;visibility:visible !important;}
+		
+		/* Style de la trace d'une fonctionnalite */
+		   blockquote p {font-family:verdana; font-size:20px; }
+		   div.process {
+		        text-align:center; 
+				width:100%; 				
+				box-shadow:
+				0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset,
+				0px 2px 2px 0px rgba(255, 255, 255, 0.5);
+				padding:0px;}
+		   button.b1 { 
+		        margin:0px; 
+				padding:20px; 
+				border:0; 
+				background-color:silver;
+                			
+		        box-shadow:
+				0px 2px 2px 0px rgba(0, 0, 0, 0.5),
+				0px 2px 2px 0px rgba(255, 255, 255, 0.5) inset; 
+		   }
+		   button.b1:hover {	background-color:#00ff99; }
+		   span.s1 { margin:0; padding:0;}
+		   span.title { font-size:16px; color:gray; }
+		   code.mthd {color:green;}
 	</style>
 	
 </head>
@@ -48,11 +73,20 @@
 		<ol id="documenter_nav">
 			<li><a class="current" href="#documenter_cover">Start</a></li>
             <li><a href="#install">PHP Files &amp; Structure</a></li>
-			<li><a href="#general_settings">CSS Files</a></li>
-            <li><a href="#panel">JavaScript</a></li>
+			
+			<li><a href="#general_settings">Affichage des articles </a></li>
+			<li><a href="#panel">Affichage d'un article</a></li>
+            <li><a href="#deleteArticle">Suppression d'un article</a></li>
+			
+			<li><a href="#addComment">Ajout d'un comment</a></li>
+			<li><a href="#deleteComment">Suppression d'un comment</a></li>
+			
+			<li><a href="#addArticle">Ajout d'un article</a></li>
+
+			
 			<li><a href="../index.php">Retour au projet</a></li>
 		</ol>
-		<div id="documenter_copyright">Copyright ahamadandjib 2019<br></div>
+		<div id="documenter_copyright"> Copyright Ahamada Andjib 2019<br></div>
 	</div>
 	<div id="documenter_content">
 		<section id="documenter_cover">
@@ -62,9 +96,8 @@
 				<li>By: Ahamada Mze Andjib</li>
 				<li><a href="https://github.com/tamim2014/POO">github.com/tamim2014/POO</a></li>
 			</ul>
-			<p>C'est juste un module de presentation. Le projet est telechargeable a l'adresse ci-dessus.</p>
-			<p><span style=" text-decoration: underline overline ; color:red;">Bug !:</span><br> Seuls IE et firefox gerent cette page de documentation.<br> Chrome ne fonctionne pas (pour je sais pas encore quelle raison ?!) .</p>
-		
+			<p>Le projet est telechargeable a l'adresse ci-dessus.</p>
+					
 			<pre class="prettyprint lines"  >
 				<div  style="text-align:left; "><img src="img/arborescence.png" width="100%" height="100%" /> </div>
 		    </pre>
@@ -77,8 +110,8 @@
 		<section id="install">      
 			<h3>PHP Files & Structure</h3><hr class="notop">
 			Deux principaux dossiers :<code style="color:blue;">libraries</code> et  <code style="color:blue;">templates</code>.<br><br>
-			<h1><code style="color:blue;">libraries</code></h1>
-			<ul style="list-style-type:square;">
+			<code style="color:blue; margin-bottom:0;"><b>libraries</b></code>
+			<ul style="list-style-type:square; margin-top:0;">
 				<li><code style="color:blue;">models</code> : Interraction avec la base de donn&eacute;es </li>
 				<li><code style="color:blue;">controllers</code> : Interraction avec l'utilisateur</li>
 				<li><code>database.php</code> Connexion &agrave; la base de donn&eacute;es</li>
@@ -93,8 +126,8 @@
 
 				</li>
 			  </ul>
-			  <h1><code style="color:blue;">templates</code></h1>
-			  <ul style="list-style-type:square;">
+			  <code style="color:blue; margin-bottom:0;"><b>templates</b></code>
+			  <ul style="list-style-type:square; color:blue; margin-top:0;">
 				  <li><code>layout.html.php</code> vue de la page index</li>
 				  <li><code style="color:blue;">articles</code> Contient les 2 vues suivantes :
 					<div style = "margin-top: -20px;">
@@ -132,73 +165,147 @@
 					- <code>save-comment.php</code> Permet &agrave; l'utilisateur d'ajouter un commentaire sur un article <br>
 
 				</p>
-			<p>If you would like to edit the color, font, or style of any elements in one of these columns, you would do the following:</p>
+			<p> Le panorama du projet est fait. On passe au focus:</p>
 			<ul>
-				<li><strong>Colors:</strong> autoCorrect is necessary to change the foreground color (Ctrl + F);</li>
-				<li><strong>Fonts:</strong> replace the existing font assigned to the <code>body</code>;</li>
-				<li><strong>Elements:</strong> you can swap, delete all items on the page;</li>
+				<li><strong>Structure:</strong> Articulations et interconnexion des objets</li>
+				<li><strong>Process:</strong> Processus d'execution de chaque fonctionnalite . </li>
 			</ul>
-			
+			<ul>
+				<li><strong>Fonctionnalit&eacute;:</strong>  action de l'utilisateur .</li>
+				<li><strong>Fonction:</strong> Paction du moteur PHP . </li>
+			</ul>			
 		</section>
-      
-		<section id="general_settings">
-			<h3>CSS Files</h3>
-			<p>I'm using six CSS files in this theme.</p>
-			<ul>
-				<li><code>style.css</code> - Main stylesheet. This file also contains some general styling, such as anchor tag colors, font-sizes, etc.</li>
-				<li><code>bootstrap.min.css</code> - bootstrap styles</li>
-				<li><code>flexslider.css</code> - FlexSlider styles. Used in the blog.</li>
-				<li><code>owl.carousel.css</code> - own.carousel styles. Used in the Clients block and Features Works</li>
-				<li><code>animate.css</code> - animation styles</li>
-				<li><code>prettyPhoto.css</code> - PrettyPhoto style.</li>
-			</ul>
-			
-			<p>Mind that these values might be overridden somewhere else in the file.</p>
-			<p><code>style.css</code> file contains all of the specific stylings for the page. The file is separated into sections using:</p>
-			
-<pre class="prettyprint lines">
-/*-----------------------------------------------------------------------------------*/
-/*	NAME OF BLOCK
-/*-----------------------------------------------------------------------------------*/
-
-etc.
-</pre>
-
-			<p>If you would like to edit a specific section of the site, simply find the appropriate label in the CSS file, and then scroll down until you find the appropriate style that needs to be edited.</p>
-
-			<p>All images are found in the <code>images</code>. If you want to replace the image, just copy the folder with the same name as the original file with identical proportions.</p>
-			
+  
+		<section id="general_settings" >
+		    <h3>Afficher tous les articles : </h3>
+			<p> Le controller Article [ mthd index() ]  pilote la procedure.</p>	   
+				<div class ="process , prettyprint" style="padding:0;" > 		
+					 <button class="b1" > / index.php</button><br>
+						<span class="s1" > | </span><br>
+						<span class="s1" > | </span><br>
+						<span class="s1" > | </span><br>				
+					<button class="b1" style="color:blue;"> / libraries / controllers / article.php / <code class="mthd">index( )</code></button><br>
+						<span class="s1" > | </span><br>
+						<span class="s1" > | </span><br>
+						<span class="s1" > | </span><br>
+					<button class="b1" style="color:blue;"> / libraries / models / Article.php / <code class="mthd">findAll( )</code><br><br><span style="color:gray"> [ Par heritage de la classe connexion ]</span></button> <br>
+						<span class="s1" > | </span><br>
+						<span class="s1" > | </span><br>
+						<span class="s1" > | </span><br>				
+					<button class="b1"> / libraries / Renderer.php / <code class="mthd"> render_index( )</code></button><br>
+						<span class="s1" > | </span><br>
+						<span class="s1" > | </span><br>
+						<span class="s1" > | </span><br>			
+					<button class="b1" style="margin-left:50px; ">/ templates / articles / index.html.php <br></button><button class="b1" >  / templates / layout.html.php</button><br> <br>							
+				</div>					    
 		</section>
 
 
 		<section id="panel">
-			<h3>JavaScript</h3>
-			<p>Twelve Javascript files are used in this site.</p>
-			<ul>
-				<li><code>myscript.js</code> - User configuration file scripts. Most of the animation in this site are carried out from the customs scripts. There are a few functions that you can look at.<br><br>
-				file contains all of the specific stylings for the page. The file is separated into sections using:</p>	
-<pre class="prettyprint lines">
-/*-----------------------------------------------------------------------------------*/
-/*	NAME OF BLOCK
-/*-----------------------------------------------------------------------------------*/
+			<h3>Afficher un article et ses commentaires :</h3>
+			<p>Le controller Article [ mthd show() ] pilote la procedure </p>
+			<div class ="process , prettyprint" style="padding:0;">
+				 <!-- Echapper le code php : &lt; et &gt; -->			
+				<button class="b1">/templates/index.html.php:<code class="mthd">&lt;a href="index.php?controller=article&task=show&id=&lt;?= $article['id'] ?&gt;"&gt;</code><span style="color:blue;">Lire la suite</span><code class="mthd">&lt;/a&gt;</code></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+				<button class="b1" > / libraries / controllers / Article.php / show(): &nbsp;&nbsp;&nbsp; <code class="mthd">$article_id = $_GET['id'];</code> </button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>				
+				<button class="b1" style="color:blue;"> / libraries / model  /Article <code class="mthd">extends</code> Connexion : &nbsp;&nbsp;&nbsp;<code class="mthd">->find($article_id)</code> </button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+				<button class="b1" style="color:blue;"> / libraries / models / Comment : &nbsp;&nbsp;&nbsp; <code class="mthd">->findAllComments($article_id)</code></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>				
+				<button class="b1">  <span style="color:blue;">@\Renderer :: </span> <code class="mthd">render_show( compact( 'pageTitle' ,'article' ,'commentaires' , 'article_id' ));</code></button><br>							
+			</div>
+		</section>
 
-etc.
-</pre>
-<br>
-				</li>
-				<li><code>blog_post.js</code> - Calls scripts, used on the inside page of posts</li>
-				<li><code>jquery.flexslider-min.js</code> - FlexSlider script. Used in the home block.</li>
-				<li><code>jquery.isotope.min.js</code> - Isotop script. Used in the blog.</li>
-				<li><code>jquery.own.carousel.js</code> - used to scroll the block "command" and Features Works.</li>
-				<li><code>jquery.prettyPhoto.js</code> - PrettyPhoto script. script allows you to magnify images.</li>
-				<li><code>animate.js</code> - appearance of the animation function blocks when scrolling website.</li>
-				<li><code>jquery.BlackAndWhite.js</code> - Apply a black white logo customers.</li>
-				<li><code>jquery.mb.YTPlayer.js</code> - video player on slides in section <code>home</code>.</li>
-				<li><code>jquery.min.js</code> - jQuery 1.10.2.</li>
-				<li><code>jquery.nicescroll.min.js</code> - replacement for the standard to scroll.</li>
-				<li><code>superfish.min.js</code> - drop-down menu of the second level.</li>
-			</ul>
+
+		<section id="deleteArticle">
+			<h3>Supprimer un article : </h3>
+			<p>Le controller Article [ mthd delete() ]  pilote la procedure </p>
+			<div class ="process , prettyprint" style="padding:0;">
+				 <!-- Echapper le code php : &lt; et &gt; -->
+				<button class="b1" > / templates / index.html.php : &nbsp;&nbsp; <code class="mthd"> &lt;a href="index.php?controller=article&task=delete&id=&lt;?= $article['id'] ?&gt;"&gt;</code>&nbsp;<span style="color:red;">Supprimer&nbsp;</span><code class="mthd">&nbsp;&lt;/a&gt;</code></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+				<button class="b1" > / libraries / controllers / Article.php / delete(): &nbsp;&nbsp;&nbsp; <code class="mthd"> $id = $_GET['id'];</code> </button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>				
+				<button class="b1" style="color:blue;"> / libraries / model  /Article <code class="mthd">extends</code> Connexion : &nbsp;&nbsp;&nbsp;<code class="mthd">->find($id)</code> </button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+				<button class="b1" style="color:blue;"> / libraries / model  /Article <code class="mthd">extends</code> Connexion : &nbsp;&nbsp;&nbsp;<code class="mthd">->delete($id)</code> </button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>	                       			
+				<button class="b1"> <code class="mthd"> <span style="color:blue;">\Http::</span>redirect("index.php");</code></button><br>													
+			</div>
+		</section>		
+		<section id="addComment">
+			<h3>Ajouter un commentaire : </h3>
+			<p>Le controller Comment [ mthd insert() ]  pilote la procedure </p>
+			<div class ="process , prettyprint" style="padding:0;">
+				<button class="b1">/templates/articles/show.html.php:<code class="mthd">&lt;form action="index.php?controller=comment&task=insert methode="POST"&gt;</code><span style="color:blue;">btn Commenter</span></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>				
+				<button class="b1" style="color:blue;"> /libraries/controllers/Comment.php/ <code class="mthd">insert( )</code></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+				<button class="b1" style="color:blue;"> /libraries/models/Comment.php/ <code class="mthd">insertComment.php( auteur <code>,</code> contenu<code>,</code> article_id )</code></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>				
+				<button class="b1"> /libraries/Http.php/redirect( $url )</button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>			
+				<button class="b1" id="controllers-article-show"> /libraries/controllers/Article/show( )</button><br>																			
+			</div>
+		</section>
+		<section id="deleteComment">
+			<h3>Supprimer un Commentaire : </h3>
+			<p>Le controller Comment [ mthd delete() ]  pilote la procedure  </p>
+			<div class ="process , prettyprint" style="padding:0;">				                                                                            
+				 <!-- Echapper le code php : &lt; et &gt; -->
+				<button class="b1" style="padding:20px 0; font-size:12px;">/templates/articles/index.html.php:<code class="mthd">&lt;a href="index.php?controller=comment&task=delete&id=&lt;?=$commentaire['id']?&gt;"&gt;</code><span style="color:red;">Supprimer</span><code class="mthd">&lt;/a&gt;</code></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+				<button class="b1" > / libraries / controllers / Comment.php / delete(): &nbsp;&nbsp;&nbsp; <code class="mthd"> $id = $_GET['id'];</code> </button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>				
+				<button class="b1" style="color:blue;"> / libraries / model  / Comment <code class="mthd">extends</code> Connexion : &nbsp;&nbsp;&nbsp;<code class="mthd">->find($id)</code> </button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+				<button class="b1" style="color:blue;"> / libraries / model  /Comment <code class="mthd">extends</code> Connexion : &nbsp;&nbsp;&nbsp;<code class="mthd">->delete($id)</code> </button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>	                       			
+				<button class="b1"> <code class="mthd"> <span style="color:blue;">\Http::</span>redirect("Location: article.php?id=" . $article_id);</code></button><br>							
+			</div>
+		</section>
+		<section id="addArticle">
+			<h3>Ajouter un nouvel article : </h3>
+			<p>Le controller New_article [ mthd insert() ]  pilote la procedure  </p>
+			<div class ="process , prettyprint" style="padding:0;">
+			...
+			</div>
 		</section>			
+		
 	</div>
 
 </body>

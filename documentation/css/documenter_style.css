@@ -66,7 +66,7 @@ strong{
 #documenter_content{
 	position:absolute;
 	right:18px;
-	left:218px;
+	left:198px; /* left:218px;   */
 	padding-left:10px;
 	padding-bottom:800px;
 	min-height:100%;
@@ -79,7 +79,7 @@ strong{
 	box-shadow:0 0 6px rgba(3,3,3,0.6);
 	position:fixed;
 	left:0;
-	width:200px;
+	width:180px; /* width:200px; */
 	height:100%;
 	min-height:100%;
 	z-index:100;
@@ -354,4 +354,6 @@ code {
 		background-image:url(img/pre_bg.png) !important;
 		line-height:19px;
 	}
+
+	
 }
