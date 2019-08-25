@@ -10,18 +10,14 @@ class Comment extends Constructeur
     public function insert(){
 
         $articleModel = new \Models\Article();
-
         $author = null;
         if (!empty($_POST['author'])) {
             $author = $_POST['author'];
         }
-
-
         $content = null;
         if (!empty($_POST['content'])) {
             $content = htmlspecialchars($_POST['content']);
-        }
-        
+        }      
         $article_id = null;
         if (!empty($_POST['article_id']) && ctype_digit($_POST['article_id'])) {
             $article_id = $_POST['article_id'];
