@@ -32,7 +32,9 @@ class Comment extends Constructeur
 
         $this->model->insertComment($author, $content, $article_id);     
        //  \Http::redirect('Location: article.php?id='.$article_id);
-        header('Location: index.php?controller=article&task=show&id='. $article_id);  exit();      
+       //header('Location: index.php?controller=article&task=show&id='.$article_id);  exit();
+       \Http::redirect("index.php?controller=article&task=show&id=".$article_id); 
+             
     }
 
 
