@@ -20,7 +20,7 @@
     <?php endforeach ?>
 <?php endif ?>
 <div class="talazouz" >
-    <form action="index.php?controller=comment&task=insert" > 
+    <form action="index.php?controller=comment&task=insert" methode="POST"> 
         <input class="wendo"  type="text" name="author" placeholder="Votre pseudo !"> 
         <textarea class="hindri"  name="content" id="" cols="30" rows="10" placeholder="Votre commentaire ..."></textarea>       
         <input  type="hidden" name="article_id" value="<?= $article_id ?>">
