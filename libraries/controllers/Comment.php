@@ -15,12 +15,11 @@ class Comment extends Constructeur
             $author = $_POST['author'];
         }
         $content = null;
-        if (!empty($_POST['content'])) {
-            $content = htmlspecialchars($_POST['content']);
-        }      
+        if (!empty($_POST['content'])) { 
+            $content = htmlspecialchars($_POST['content']); }      
         $article_id = null;
-        if (!empty($_POST['article_id']) && ctype_digit($_POST['article_id'])) {
-            $article_id = $_POST['article_id'];
+        if (!empty($_POST['article_id']) && ctype_digit($_POST['article_id'])) {  
+            $article_id = $_POST['article_id'];            
         }
         if (!$author || !$article_id || !$content) {
             die("Votre formulaire a été mal rempli !");
@@ -31,8 +30,7 @@ class Comment extends Constructeur
         }
 
         $this->model->insertComment($author, $content, $article_id);     
-       //  \Http::redirect('Location: article.php?id='.$article_id);
-       //header('Location: index.php?controller=article&task=show&id='.$article_id);  exit();
+
        \Http::redirect("index.php?controller=article&task=show&id=".$article_id); 
              
     }
