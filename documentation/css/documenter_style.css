@@ -180,7 +180,7 @@ noscript p{
 
 #documenter_cover{
 	height:800px;
-	padding-top:200px !important;
+	padding-top:46px !important; /* padding-top:200px !important;   defini la marege superieur du contenu de la page  */
 }
 #documenter_cover li{
 	list-style:none !important;

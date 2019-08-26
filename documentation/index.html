@@ -82,6 +82,7 @@
 			<li><a href="#deleteComment">Suppression d'un comment</a></li>
 			
 			<li><a href="#addArticle">Ajout d'un article</a></li>
+			<li><a href="#editArticle">Modif d'un article</a></li>
 
 			
 			<li><a href="../index.php">Retour au projet</a></li>
@@ -100,15 +101,13 @@
 					
 			<pre class="prettyprint lines"  >
 				<div  style="text-align:left; "><img src="img/arborescence.png" width="100%" height="100%" /> </div>
-		    </pre>
-		
-		
+		    </pre>				
 		</section>
-
-
 		
 		<section id="install">      
-			<h3>PHP Files & Structure</h3><hr class="notop">
+			<br><h1>PHP Files & Structure</h1>
+			<hr class="notop">
+			
 			Deux principaux dossiers :<code style="color:blue;">libraries</code> et  <code style="color:blue;">templates</code>.<br><br>
 			<code style="color:blue; margin-bottom:0;"><b>libraries</b></code>
 			<ul style="list-style-type:square; margin-top:0;">
@@ -177,6 +176,7 @@
 		</section>
   
 		<section id="general_settings" >
+		    <br><h1>Les fonctionnalit&eacute;s: Sch&eacute;mas d'ex&eacute;cution</h1><hr class="notop">
 		    <h3>Afficher tous les articles : </h3>
 			<p> Le controller Article [ mthd index() ]  pilote la procedure.</p>	   
 				<div class ="process , prettyprint" style="padding:0;" > 		
@@ -302,7 +302,7 @@
 			<h3>Ajouter un nouvel article : </h3>
 			<p>Le controller Newarticle [ mthd insert() ]  pilote la procedure  </p>
 			<div class ="process , prettyprint" style="padding:0;">
-				<button class="b1">/templates/articles/new.html.php:<code class="mthd">&lt;form action="index.php?controller=newarticle&task=insert methode="POST"&gt;</code><span style="color:blue;">btn Save</span></button><br>
+				<button class="b1">/templates/articles/new.html.php:<code class="mthd">&lt;form action="index.php?controller=newarticle&task=insert methode="POST"&gt;</code><span style="color:blue;">&nbsp;btn Save</span></button><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>				
@@ -320,7 +320,30 @@
 					<span class="s1" > | </span><br>			
 				<button class="b1" id="controllers-article-show"> /libraries/controllers/Newarticle/&nbsp;<code class="mthd">show( )</code>&nbsp;:&nbsp;<code class="mthd">$article_id = $_GET['id'];</code></button><br>																						
 			</div>
-		</section>			
+		</section>
+		<section id="editArticle">
+			<h3>Modifier un article : </h3>
+			<p>Le controller Editarticle [ mthd edit() ]  pilote la procedure  </p>
+			<div class ="process , prettyprint" style="padding:0;">
+				<button class="b1">/templates/articles/edit.html.php:<code class="mthd">&lt;form action="index.php?controller=editarticle&task=insert methode="POST"&gt;</code><span style="color:blue;">&nbsp;btn Edit</span></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>				
+				<button class="b1" style="color:blue;"> /libraries/controllers/Editarticle.php/ <code class="mthd">edit( )</code></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+				<button class="b1" style="color:blue;"> /libraries/models/Editarticle.php/ <code class="mthd">editArticle.php(title<code>,</code> slug<code>,</code> introduction<code>,</code> content<code>,</code> created_at<code>,</code> photo)</code></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>				
+				<button class="b1"> /libraries/Http.php/<code class="mthd">redirect("index.php?controller=editarticle&task=show&id=".$article_id )</code></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>			
+				<button class="b1" id="controllers-article-show"> /libraries/controllers/Editarticle/&nbsp;<code class="mthd">show( )</code>&nbsp;:&nbsp;<code class="mthd">$article_id = $_GET['id'];</code></button><br>																						
+			</div>
+		</section>		
 		
 	</div>
 
