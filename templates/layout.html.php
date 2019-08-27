@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/HoverTabs.css" media="all">
     <link rel="stylesheet" href="css/content.css" media="all">
-    <title>Mon superbe blog - <?= $pageTitle ?></title> <!-- variable defini dans index.php -->
-   
+    <link rel="stylesheet" href="css/menu_accordeon.css" media="all">
+    <title>Mon superbe blog - <?= $pageTitle ?></title> <!-- variable defini dans index.php -->  
 </head>
 
 <body>
@@ -21,13 +21,17 @@
 			<li><a href="#">Rente immobilière</a></li>
             <li><a href="#">Muses</a></li>
             <li><a href="documentation/index.html">Documentation du projet</a></li>
-            <!-- <li><a href="index.php?controller=article&task=show&id=<?= $article['id'] ?>">Admin</a></li> -->
-            <li><a href="index.php?controller=new_article&task=newarticle">Admin</a></li>
+            <!-- <li><a href="index.php?controller=article&task=show&id=<?= $article['id'] ?>">Admin</a></li> -->          
+            <li class="dropdown , last-item"    > 
+                  <a href="#" > Admin</a>								
+				  <div class="dropdown-content"  >                  
+					<a  id="addArticle"   href="index.php?controller=new_article&task=newarticle" >Ajout d'un article</a>
+					<a  id="editArticle"  href="#" >Modif d'un article</a>
+				  </div>			
+			</li>
 		</ol>
 		<div id="documenter_copyright">Programmation Orientee Objet<br></div>
 	</div>
-
-
    <!-- Contenu -->
    <div id="documenter_content">
         <?php  if(!isset($pageContent)) { $pageContent = ob_get_clean(); } ?>

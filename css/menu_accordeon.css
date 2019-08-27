@@ -1,0 +1,24 @@
+/* layout.html.php : Sous menu accoredeon  -Hoverable Dropdown*/
+     			
+.dropdown-content {
+    display: none;		  
+    min-width:100%;			  
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;               				
+}
+
+div.dropdown-content a#addArticle, div.dropdown-content #editArticle  { 
+    background-color : black; 
+    color:white; text-shadow:none; 
+    text-decoration:none;
+}
+div.dropdown-content a#addArticle:hover, div.dropdown-content a#editArticle:hover { 
+    background:#f7f7f9; 
+    color:#000000;
+}
+
+.dropdown:hover .dropdown-content {  display: block; }
+/*
+.last-item { box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); }
+*/
+
