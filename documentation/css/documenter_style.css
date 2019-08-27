@@ -72,7 +72,6 @@ strong{
 	min-height:100%;
 	height:auto;
 	z-index:1;
-	background-color: red;
 }
 #documenter_sidebar{
 	-moz-box-shadow:0 0 6px rgba(3,3,3,0.6);

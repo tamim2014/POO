@@ -13,7 +13,7 @@ div.dropdown-content a#addArticle, div.dropdown-content #editArticle  {
     text-decoration:none;
 }
 div.dropdown-content a#addArticle:hover, div.dropdown-content a#editArticle:hover { 
-    background:#f7f7f9; 
+    background:silver; /* #f7f7f9; */
     color:#000000;
 }
 
