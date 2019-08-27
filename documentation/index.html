@@ -41,6 +41,10 @@
 		#documenter_sidebar ol a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
 		#documenter_copyright{display:block !important;visibility:visible !important;}
 		
+		.last-item { box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); }
+			   
+			
+		
 		/* Style de la trace d'une fonctionnalite */
 		   blockquote p {font-family:verdana; font-size:20px; }
 		   div.process {
@@ -64,6 +68,26 @@
 		   span.s1 { margin:0; padding:0;}
 		   span.title { font-size:16px; color:gray; }
 		   code.mthd {color:green;}
+		   
+		  
+			/* Hoverable Dropdown */  
+			
+			.dropdown-content {
+			    display: none;		  
+			    min-width:100%;			  
+			    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index:1;
+                				
+			}
+					    
+			.dropdown:hover .dropdown-content {
+			     display: block;				 
+			}
+			
+            
+			
+
+						
 	</style>
 	
 </head>
@@ -72,20 +96,19 @@
 		<a href="#documenter_cover" id="documenter_logo"></a>
 		<ol id="documenter_nav">
 			<li><a class="current" href="#documenter_cover">Start</a></li>
-            <li><a href="#install">PHP Files &amp; Structure</a></li>
-			
-			<li><a href="#general_settings">Affichage des articles </a></li>
-			<li><a href="#panel">Affichage d'un article</a></li>
-            <li><a href="#deleteArticle">Suppression d'un article</a></li>
-			
-			<li><a href="#addComment">Ajout d'un comment</a></li>
-			<li><a href="#deleteComment">Suppression d'un comment</a></li>
-			
-			<li><a href="#addArticle">Ajout d'un article</a></li>
-			<li><a href="#editArticle">Modif d'un article</a></li>
-
-			
-			<li><a href="../index.php">Retour au projet</a></li>
+            <li><a href="#install">PHP Files &amp; Structure</a></li>						
+			<li class="dropdown"    > <a href="#"  >  Fonctionnalit&eacute;s</a>								
+				  <div class="dropdown-content"  >
+				    <a  style="background-color:black; color:white; text-shadow:none; text-decoration:none; " href="#general_settings" onMouseOver="$(this).css('background', '#f7f7f9');$(this).css('color', '#000000');"  onMouseOut="$(this).css('background', 'black');$(this).css('color', 'white');" >Affichage des articles </a>
+					<a style="background-color:black; color:white; text-shadow:none; text-decoration:none; " href="#panel" onMouseOver="$(this).css('background', '#f7f7f9');$(this).css('color', '#000000');"              onMouseOut="$(this).css('background', 'black');$(this).css('color', 'white');" >Affichage d'un article</a>
+					<a style="background-color:black; color:white; text-shadow:none; text-decoration:none; " href="#deleteArticle" onMouseOver="$(this).css('background', '#f7f7f9');$(this).css('color', '#000000');"      onMouseOut="$(this).css('background', 'black');$(this).css('color', 'white');"  >Suppression d'un article</a>
+					<a style="background-color:black; color:white; text-shadow:none; text-decoration:none; " href="#addComment" onMouseOver="$(this).css('background', '#f7f7f9');$(this).css('color', '#000000');"         onMouseOut="$(this).css('background', 'black');$(this).css('color', 'white');" >Ajout d'un comment</a>
+					<a style="background-color:black; color:white; text-shadow:none; text-decoration:none; " href="#deleteComment" onMouseOver="$(this).css('background', '#f7f7f9');$(this).css('color', '#000000');"      onMouseOut="$(this).css('background', 'black');$(this).css('color', 'white');" >Suppression d'un comment</a>
+					<a style="background-color:black; color:white; text-shadow:none; text-decoration:none; " href="#addArticle" onMouseOver="$(this).css('background', '#f7f7f9');$(this).css('color', '#000000');"         onMouseOut="$(this).css('background', 'black');$(this).css('color', 'white');" >Ajout d'un article</a>
+					<a style="background-color:black; color:white; text-shadow:none; text-decoration:none; " href="#editArticle" onMouseOver="$(this).css('background', '#f7f7f9');$(this).css('color', '#000000');"        onMouseOut="$(this).css('background', 'black');$(this).css('color', 'white');" >Modif d'un article</a>
+				  </div>			
+			</li>
+			<li class="last-item"><a href="../index.php">Retour au projet</a></li>			
 		</ol>
 		<div id="documenter_copyright"> Copyright Ahamada Andjib 2019<br></div>
 	</div>
