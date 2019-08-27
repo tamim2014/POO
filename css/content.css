@@ -2,13 +2,23 @@
 
 #documenter_content{
 	position:absolute;
-	right:18px;
-	left:218px;
-	padding-left:10px;
-	padding-bottom:800px;
+	right:0; /* left:18px; */
+	left:198px;/* left:218px; */
+	padding-left:40px; /* padding-left:10px; */
+	padding-top:20px; /* ce parametre n'existait pas ici */
+	padding-right:10px; /* ce parametre n'existait pas ici */
+
+	padding-bottom:780px; /* padding-bottom:800px;  */
 	min-height:100%;
 	height:auto;
-    z-index:1;
+	z-index:1;
+			   /* background-color:#189891; */
+			   /*
+			   margin-left:-20px;  
+			   padding-left:40px; 
+			   margin-right:-20px; 
+			   padding-right:20px;" 
+			   */ 
     
 }
 
