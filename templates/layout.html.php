@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/HoverTabs.css" media="all">
     <link rel="stylesheet" href="css/content.css" media="all">
     <link rel="stylesheet" href="css/menu_accordeon.css" media="all">
+    <link rel="stylesheet" href="documentation/css/prettify.css" type="text/css" media="screen, projection"> <!--  background de l'article et de son titre -->
     <title>Mon superbe blog - <?= $pageTitle ?></title> <!-- variable defini dans index.php -->
     <style>
         .tablecentre {           

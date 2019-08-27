@@ -18,7 +18,7 @@ div.dropdown-content a#addArticle:hover, div.dropdown-content a#editArticle:hove
 }
 
 .dropdown:hover .dropdown-content {  display: block; }
-/*
+
 .last-item { box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); }
-*/
+
 

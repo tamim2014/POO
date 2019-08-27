@@ -1,15 +1,15 @@
-html{background-color:#FFFFFF;color:#383838;}
+html{background-color:#FFFFFF; color:#383838;}
 ::-moz-selection{background:#444444;color:#f7f7f9;}
-::selection{background:#444444;color:#f7f7f9;}
+::selection{background:#444444; color:#f7f7f9;}
 #documenter_sidebar #documenter_logo{background-image:url();}
 a{color:#0000FF;}
-hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+hr{border-top:1px solid #EBEBEB; border-bottom:1px solid #FFFFFF;}
 #documenter_sidebar, #documenter_sidebar ol a{background-color:#f7f7f9;color:#222222;}
-#documenter_sidebar ol a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+#documenter_sidebar ol a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE; text-shadow:1px 1px 0px #EEEEEE; }
 #documenter_sidebar ol{border-top:1px solid #AAAAAA;}
-#documenter_sidebar ol a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+#documenter_sidebar ol a{border-top:1px solid #EEEEEE; border-bottom:1px solid #AAAAAA; color:#444444;}
 #documenter_sidebar ol a:hover{background:#444444;color:#f7f7f9;border-top:1px solid #444444;}
-#documenter_sidebar ol a.current{background:#444444;color:##f7f7f9;border-top:1px solid #444444;}
+#documenter_sidebar ol a.current{background:#444444; color:#f7f7f9; border-top:1px solid #444444;}
 #documenter_copyright{display:block !important;visibility:visible !important;}
 
 
