@@ -9,28 +9,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
-        $(".talazouz").hide()
+        $(".write_comment").hide()
         $("#show-comment").click(function(){
-            $(".talazouz").show();
+            $(".write_comment").show();
         });
         });
     </script>
     <link rel="stylesheet" href="css/HoverTabs.css" media="all">
     <link rel="stylesheet" href="css/content.css" media="all">
     <link rel="stylesheet" href="css/menu_accordeon.css" media="all">
-    <link rel="stylesheet" href="documentation/css/prettify.css" type="text/css" media="screen, projection"> <!--  background de l'article et de son titre -->
-    <title>Mon superbe blog - <?= $pageTitle ?></title> <!-- variable defini dans index.php -->
-    <style>
-        .tablecentre {           
-            position:absolute; 
-            border-radius:0;
-            box-shadow: 0 0 65px #cdbe9f inset, 0 0 20px #beae8c inset, 0 0 5px #816f47; 
-            -webkit-box-shadow: 0 0 65px #cdbe9f inset, 0 0 20px #beae8c inset, 0 0 5px #816f47;
-            -moz-box-shadow: 0 0 65px #cdbe9f inset, 0 0 20px #beae8c inset, 0 0 5px #816f47;
-            z-index:2;
-           
-        }
-    </style>  
+    <link rel="stylesheet" href="css/show.html.css" type="text/css" media="screen, projection"> <!--  background de l'article et de son titre -->
+    <link rel="stylesheet" href="documentation/css/prettify.css" type="text/css" media="screen, projection">
+    <title>Mon blog - <?= $pageTitle ?></title> <!-- variable defini dans index.php -->
 </head>
 
 <body >

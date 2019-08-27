@@ -1,0 +1,59 @@
+.resume {
+	background-color:#f7f7f9; /*#efefef; #e7f3fe; */
+	border-left: 6px solid  gray;
+
+	margin-bottom: 2px;
+	/* padding: 8px 12px; */
+	padding: 8px 12px 4px 12px;
+}
+
+.write_comment {
+	padding:50px; 
+	margin-top:20px; 
+	border-radius:6px;
+	background-color:#f7f7f9;
+}
+
+.read_comment {
+	background-color:#f7f7f9; 
+	padding:20px;
+	border-radius:40px;
+	margin-bottom:20px; 
+    width:40%;   
+}
+
+.yissima  { 
+    background: #f7f7f9;  	
+    z-index:2;
+    box-shadow:
+    0px 2px 2px 0px rgba(0, 0, 0, 0.5) inset,
+    0px 2px 2px 0px rgba(255, 255, 255, 0.5);
+    padding:0px;
+}
+
+.wendo {
+  width:99.3%;
+  margin:1px;
+}
+
+.hindri{
+  width:99%; 
+  margin:1px; 
+}
+
+.pveha {  width:99.9%; }
+.police_intro {   font-family: Verdana, Geneva, sans-serif; font-size: 150%;  }   
+.police_article { line-height: 200%; font-size: 150%;  font-family: Verdana, Geneva, sans-serif; }
+.separateur {  border: 1px solid #e1e1e8; margin-bottom:20px; }
+
+#show-comment:hover {color:blue;}
+.tablecentre {           
+    position:absolute; 
+    border-radius:0;
+    box-shadow: 0 0 65px #cdbe9f inset, 0 0 20px #beae8c inset, 0 0 5px #816f47; 
+    -webkit-box-shadow: 0 0 65px #cdbe9f inset, 0 0 20px #beae8c inset, 0 0 5px #816f47;
+    -moz-box-shadow: 0 0 65px #cdbe9f inset, 0 0 20px #beae8c inset, 0 0 5px #816f47;
+    z-index:2;
+   
+}
+

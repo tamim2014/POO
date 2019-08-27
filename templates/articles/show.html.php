@@ -3,19 +3,19 @@
 <img src="img/<?php echo( $article['photo']) ?>" style="width:100%; height:300px; margin-top:2px; border-radius:6px;" alt="" /> 
 <h1 style="font-family: Verdana, Geneva, sans-serif;"><?= $article['title'] ?></h1>
 <small>Ecrit le <?= $article['created_at'] ?></small>
-<p class=" prettyprint_blog , linenums" style="font-family: Verdana, Geneva, sans-serif; font-size: 150%;"><?= $article['introduction'] ?></p>
+<p class=" prettyprint_blog , linenums , police_intro" ><?= $article['introduction'] ?></p>
 <hr>
 <div  class=" prettyprint_blog , linenums"  >  
-    <div style="margin-bottom:20px; line-height: 200%; font-size: 150%;  font-family: Verdana, Geneva, sans-serif;">     <?= $article['content'] ?> </div> <!-- contenu de l'article -->
+    <div class="police_article" style="margin-bottom:20px;"  >   <?= $article['content'] ?> </div> <!-- contenu de l'article -->
     <span id="show-comment" style="float:left; "> <b> <i style='font-size:14px' class='far'>&#xf27a;</i> &nbsp; Commenter</b> </span>
     <div style="float:right; ">
         <?php if (count($commentaires) != 0) : ?>
            <b><?= count($commentaires) ?> Commetaires </b>
         <?php endif ?>   
     </div><br><br><br><br>
-    <div style="border: 1px solid #e1e1e8; margin-bottom:20px;"></div>
+    <div class="separateur" ></div>
 
-    <div class="talazouz" style="border-radius:6px;">
+    <div class="write_comment" >
         <form action="index.php?controller=comment&task=insert" method="POST" class="yissima" > 
             <input class="wendo"  type="text" name="author" placeholder="Votre pseudo !"> 
             <textarea class="hindri"  name="content" id="" cols="30" rows="10" placeholder="Votre commentaire ..."></textarea>       
@@ -27,7 +27,7 @@
     <div >
         <?php if (count($commentaires) != 0) : ?>
             <?php foreach ($commentaires as $commentaire) : ?>              
-                <div style="background-color:#f7f7f9; padding:20px; border-radius:40px; margin-bottom:20px; width:40%;">
+                <div class="read_comment"  >
                     <b><span style="color: blue;"> <?= $commentaire['author'] ?></span> </b>&nbsp;
                     <small>Le <?= $commentaire['created_at'] ?></small>
                     <blockquote>
