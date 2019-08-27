@@ -14,10 +14,20 @@
         <?php endif ?>   
     </div><br><br><br><br>
     <div style="border: 1px solid #e1e1e8; margin-bottom:20px;"></div>
+
+    <div class="talazouz" style="border-radius:6px;">
+        <form action="index.php?controller=comment&task=insert" method="POST" class="yissima" > 
+            <input class="wendo"  type="text" name="author" placeholder="Votre pseudo !"> 
+            <textarea class="hindri"  name="content" id="" cols="30" rows="10" placeholder="Votre commentaire ..."></textarea>       
+            <input  type="hidden" name="article_id" value="<?= $article_id ?>">
+            <button class="pveha">Commenter !</button>
+        </form>
+    </div><br><br>
+
     <div >
         <?php if (count($commentaires) != 0) : ?>
             <?php foreach ($commentaires as $commentaire) : ?>              
-                <div style="background-color:#f7f7f9; padding:20px; border-radius:40px; margin-bottom:20px; width:50%;">
+                <div style="background-color:#f7f7f9; padding:20px; border-radius:40px; margin-bottom:20px; width:40%;">
                     <b><span style="color: blue;"> <?= $commentaire['author'] ?></span> </b>&nbsp;
                     <small>Le <?= $commentaire['created_at'] ?></small>
                     <blockquote>
@@ -34,11 +44,3 @@
 
 
 
-<div class="talazouz" style="border-radius:6px;">
-    <form action="index.php?controller=comment&task=insert" method="POST" class="yissima" > 
-        <input class="wendo"  type="text" name="author" placeholder="Votre pseudo !"> 
-        <textarea class="hindri"  name="content" id="" cols="30" rows="10" placeholder="Votre commentaire ..."></textarea>       
-        <input  type="hidden" name="article_id" value="<?= $article_id ?>">
-        <button class="pveha">Commenter !</button>
-    </form>
-</div>
