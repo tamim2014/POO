@@ -7,9 +7,10 @@
 <hr>
 <div  class=" prettyprint_blog , linenums"  >  
     <div style="margin-bottom:20px; line-height: 200%; font-size: 150%;  font-family: Verdana, Geneva, sans-serif;">     <?= $article['content'] ?> </div> <!-- contenu de l'article -->
+    <span id="show-comment" style="float:left; "> <b> <i style='font-size:14px' class='far'>&#xf27a;</i> &nbsp; Commenter</b> </span>
     <div style="float:right; ">
         <?php if (count($commentaires) != 0) : ?>
-           <b> <?= count($commentaires) ?> Commetaires </b>
+           <b><?= count($commentaires) ?> Commetaires </b>
         <?php endif ?>   
     </div><br><br><br><br>
     <div style="border: 1px solid #e1e1e8; margin-bottom:20px;"></div>
@@ -21,7 +22,7 @@
                     <small>Le <?= $commentaire['created_at'] ?></small>
                     <blockquote>
                         <em><?= $commentaire['content'] ?></em>
-                    </blockquote>
+                    </blockquote><br>
                     <a href="index.php?controller=comment&task=delete&id=<?= $commentaire['id'] ?>" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer ce commentaire ?!`)">Supprimer</a><br>
                 </div>               
             <?php endforeach ?>
