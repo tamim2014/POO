@@ -9,17 +9,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
-        $(".write_comment").hide()
-        $("#show-comment").click(function(){
-            $(".write_comment").show();
+            $(".write_comment").hide()
+            $("#show-comment").click(function(){
+                $(".write_comment").show();
+            });
         });
-        });
+        function pop_authentification()
+        {             
+		    window.open("pop-login.php", 'Popup', 'scrollbars=1, Menubar=1, resizable=1,height=409,width=918 ,  top=258, left=175 '); return false;          
+		}
     </script>
     <link rel="stylesheet" href="css/HoverTabs.css" media="all">
     <link rel="stylesheet" href="css/content.css" media="all">
     <link rel="stylesheet" href="css/menu_accordeon.css" media="all">
     <link rel="stylesheet" href="css/show.html.css" type="text/css" media="screen, projection"> <!--  background de l'article et de son titre -->
     <link rel="stylesheet" href="documentation/css/prettify.css" type="text/css" media="screen, projection">
+ 
     <title>Mon blog - <?= $pageTitle ?></title> <!-- variable defini dans index.php -->
 </head>
 
@@ -35,7 +40,7 @@
             <li><a href="documentation/index.html">Documentation du projet</a></li>
             <!-- <li><a href="index.php?controller=article&task=show&id=<?= $article['id'] ?>">Admin</a></li> -->          
             <li class="dropdown , last-item"    > 
-                  <a href="#" > Admin</a>								
+                  <a href="#" onclick="pop_authentification();"  > Admin</a>								
 				  <div class="dropdown-content"  >                  
 					<a  id="addArticle"   href="index.php?controller=new_article&task=newarticle" >Ajout d'un article</a>
 					<a  id="editArticle"  href="#" >Modif d'un article</a>
