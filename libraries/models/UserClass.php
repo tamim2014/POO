@@ -2,7 +2,9 @@
 
 namespace Models;
 //require_once('libraries/autoload.php'); 
+require_once('libraries/Database.php'); 
 require_once('libraries/models/Connexion.php');
+
 
 class UserClass extends Connexion
 {
@@ -11,6 +13,7 @@ class UserClass extends Connexion
     {
         try{
             //$this->pdo = getPDO();
+            $this->pdo = \Database:: getPDO();
             $hash_password= hash('sha256', $password); //Password encryption 
             $stmt = $this->pdo->prepare("SELECT uid FROM users WHERE (username=:usernameEmail or email=:usernameEmail) AND password=:hash_password"); 
             $stmt->bindParam("usernameEmail", $usernameEmail) ;
@@ -35,23 +38,25 @@ class UserClass extends Connexion
     public function userRegistration($username,$password,$email,$name)
     {
     try{
-        //$this->pdo= getDB();
-        $st = $db->prepare("SELECT uid FROM users WHERE username=:username OR email=:email"); 
-        $st->bindParam("username", $username,PDO::PARAM_STR);
-        $st->bindParam("email", $email,PDO::PARAM_STR);
+        
+        //$this->pdo = getPDO();
+        
+        $st = $this->pdo->prepare("SELECT uid FROM users WHERE username=:username OR email=:email"); 
+        $st->bindParam("username", $username);
+        $st->bindParam("email", $email);
         $st->execute();
         $count=$st->rowCount();
         if($count<1)
         {
-            $stmt = $db->prepare("INSERT INTO users(username,password,email,name) VALUES (:username,:hash_password,:email,:name)");
-            $stmt->bindParam("username", $username,PDO::PARAM_STR) ;
+            $stmt = $this->pdo->prepare("INSERT INTO users(username,password,email,name) VALUES (:username,:hash_password,:email,:name)");
+            $stmt->bindParam("username", $username) ;
             $hash_password= hash('sha256', $password); //Password encryption
-            $stmt->bindParam("hash_password", $hash_password,PDO::PARAM_STR) ;
-            $stmt->bindParam("email", $email,PDO::PARAM_STR) ;
-            $stmt->bindParam("name", $name,PDO::PARAM_STR) ;
+            $stmt->bindParam("hash_password", $hash_password) ;
+            $stmt->bindParam("email", $email) ;
+            $stmt->bindParam("name", $name) ;
             $stmt->execute();
-            $uid=$db->lastInsertId(); // Last inserted row id
-            $this->pdo= null;
+            $uid=$this->pdo->lastInsertId(); // Last inserted row id
+            $this->pdo = null;
             $_SESSION['uid']=$uid;
             return true;
         }

@@ -2,8 +2,8 @@
 
 
 
-<!--  upload_photo  -->
-<div style="margin-left:5%; margin-top:5%;" >
+<!--  upload_photo  --> 
+<div style="margin-left:5%; margin-top:5%;  " >
     <form  style="margin-left:16px;" action="index.php?controller=new_article&task=newarticle"  method="POST"    enctype="multipart/form-data" >       
         <input type="text" name="title"         placeholder="Titre"           style="width:96%; margin-bottom:5px;" />
         <input type="text" name="slug"          placeholder="Slug"             style="width:96%; margin-bottom:5px;" />

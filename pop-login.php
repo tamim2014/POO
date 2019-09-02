@@ -18,9 +18,9 @@ if (!empty($_POST['loginSubmit'])) {
     $password=$_POST['password'];
     if(strlen(trim($usernameEmail))>1 && strlen(trim($password))>1 ) {    
         $uid=$userClass->userLogin($usernameEmail,$password);//????????????????????????
-        if($uid) {      
-            $url=BASE_URL.'index.php';
-            header("Location: $url"); // Page redirecting to home.php 
+        if($uid) {                  
+            $url='index.php?controller=new_article&task=newarticle';        
+            header("Location: $url"); 
         }else{        
             $errorMsgLogin="Please check login details.";
         }
@@ -43,8 +43,8 @@ if (!empty($_POST['signupSubmit'])) {
     {
         $uid=$userClass->userRegistration($username,$password,$email,$name); // ??????????
         if($uid) {       
-            $url=BASE_URL.'home.php';
-            header("Location: $url"); // Page redirecting to home.php 
+            $url='index.php?controller=new_article&task=newarticle';
+            header("Location: $url"); // Page redirecting to new article 
         } else {     
            $errorMsgReg="Username or Email already exists.";
         }
@@ -76,7 +76,7 @@ if (!empty($_POST['signupSubmit'])) {
     </script>
 </head>
 
-<body style="background-color:#f7f7f9; ">
+<body style="background-color:#f7f7f9;" >
     
 	 
         <div id="login"  >
