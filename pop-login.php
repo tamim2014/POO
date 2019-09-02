@@ -68,14 +68,18 @@ if (!empty($_POST['signupSubmit'])) {
                 $("#signup").show();
                 $("#login").hide();
             });
+            $("#affiche-login").click(function(){
+                $("#signup").hide();
+                $("#login").show();
+            });
         });
     </script>
 </head>
 
-<body style="background-color:#f7f7f9;">
+<body style="background-color:#f7f7f9; ">
     
 	 
-        <div id="login" style="margin:50px;" >
+        <div id="login"  >
             <h3>Login</h3>
             <form method="post" action="" name="login">
                 <label>Username or Email</label>
@@ -84,12 +88,12 @@ if (!empty($_POST['signupSubmit'])) {
                 <input type="password" name="password" autocomplete="off"/>
                 <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
                 <input type="submit" class="button" name="loginSubmit" value="Login">
-                <input type="button" id="affiche-inscription" class="button" name="inscription" value="Signup" >
+                <input type="button" id="affiche-inscription" class="button" name="inscription" value="Signup"  >
             </form>
         </div>
-        <br><br>
+        
 
-        <div id="signup">
+        <div id="signup"  >
             <h3>Registration</h3>
             <form method="post" action="" name="signup">
                 <label>Name</label>
@@ -102,6 +106,7 @@ if (!empty($_POST['signupSubmit'])) {
                 <input type="password" name="passwordReg" autocomplete="off"/>
                 <div class="errorMsg"><?php echo $errorMsgReg; ?></div>
                 <input type="submit" class="button" name="signupSubmit" value="Signup">
+                <input type="button" id="affiche-login" class="button" name="inscription" value="Login"  >
             </form>
         </div>
  

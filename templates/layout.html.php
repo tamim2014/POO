@@ -16,7 +16,7 @@
         });
         function pop_authentification()
         {             
-		    window.open("pop-login.php", 'Popup', 'scrollbars=1, Menubar=1, resizable=1,height=409,width=918 ,  top=258, left=175 '); return false;          
+		    window.open("pop-login.php", 'Popup', 'scrollbars=1, Menubar=1, resizable=1, height=510, width= 700 ,  top=125, left=200 '); return false;          
 		}
     </script>
     <link rel="stylesheet" href="css/HoverTabs.css" media="all">
