@@ -15,7 +15,7 @@ if (!empty($_POST['loginSubmit'])) {
     $usernameEmail=$_POST['usernameEmail'];
     $password=$_POST['password'];
     if(strlen(trim($usernameEmail))>1 && strlen(trim($password))>1 ) {    
-        $uid=$userClass->userLogin($usernameEmail,$password);//????????????????????????
+        $uid=$userClass->userLogin($usernameEmail,$password); // ca se passe ici
         if($uid) {                  
             $url='index.php?controller=new_article&task=newarticle';        
             header("Location: $url"); 
@@ -39,7 +39,7 @@ if (!empty($_POST['signupSubmit'])) {
 
     if($username_check && $email_check && $password_check && strlen(trim($name))>0) 
     {
-        $uid=$userClass->userRegistration($username,$password,$email,$name); // ??????????
+        $uid=$userClass->userRegistration($username,$password,$email,$name); // ce se passe ici
         if($uid) {       
             $url='index.php?controller=new_article&task=newarticle';
             header("Location: $url"); // Page redirecting to new article 
