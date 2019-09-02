@@ -1,7 +1,6 @@
 <?php
     // source :  https://www.9lessons.info/2016/04/php-login-system-with-pdo-connection.html
     //include("config.php");           // Configuration de la connexion de la connexion BDD
-    //require_once('libraries/models/UserClass.php');
     namespace Models;
     //require_once('libraries/autoload.php'); 
     require_once('libraries/models/Connexion.php');
@@ -61,6 +60,16 @@ if (!empty($_POST['signupSubmit'])) {
  <title> Authentification officier de l'etat civil</title>
  <link rel="stylesheet" href="css/show.html.css" type="text/css" media="screen, projection">
  <link rel="stylesheet" href="css/login.html.css" type="text/css" media="screen, projection">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#signup").hide()
+            $("#affiche-inscription").click(function(){
+                $("#signup").show();
+                $("#login").hide();
+            });
+        });
+    </script>
 </head>
 
 <body style="background-color:#f7f7f9;">
@@ -75,9 +84,26 @@ if (!empty($_POST['signupSubmit'])) {
                 <input type="password" name="password" autocomplete="off"/>
                 <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
                 <input type="submit" class="button" name="loginSubmit" value="Login">
+                <input type="button" id="affiche-inscription" class="button" name="inscription" value="Signup" >
             </form>
         </div>
         <br><br>
+
+        <div id="signup">
+            <h3>Registration</h3>
+            <form method="post" action="" name="signup">
+                <label>Name</label>
+                <input type="text" name="nameReg" autocomplete="off" />
+                <label>Email</label>
+                <input type="text" name="emailReg" autocomplete="off" />
+                <label>Username</label>
+                <input type="text" name="usernameReg" autocomplete="off" />
+                <label>Password</label>
+                <input type="password" name="passwordReg" autocomplete="off"/>
+                <div class="errorMsg"><?php echo $errorMsgReg; ?></div>
+                <input type="submit" class="button" name="signupSubmit" value="Signup">
+            </form>
+        </div>
  
 
 </body>
