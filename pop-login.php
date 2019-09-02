@@ -1,11 +1,9 @@
 <?php
     // source :  https://www.9lessons.info/2016/04/php-login-system-with-pdo-connection.html
-    //include("config.php");           // Configuration de la connexion de la connexion BDD
     namespace Models;
     //require_once('libraries/autoload.php'); 
     require_once('libraries/models/Connexion.php');
     require_once('libraries/models/UserClass.php');
-
     
     $userClass = new UserClass();
 

@@ -40,9 +40,9 @@
             <li><a href="documentation/index.html">Documentation du projet</a></li>
             <!-- <li><a href="index.php?controller=article&task=show&id=<?= $article['id'] ?>">Admin</a></li> -->          
             <li class="dropdown , last-item"    > 
-                  <a href="#" onclick="pop_authentification();"  > Admin</a>								
+                  <a href="#"   > Admin</a>								
 				  <div class="dropdown-content"  >                                       
-					<a  id="addArticle"   href="index.php?controller=new_article&task=newarticle" >Ajout d'un article</a>
+					<a  id="addArticle"   href="#" onclick="pop_authentification();" >Ajout d'un article</a>
 					<a  id="editArticle"  href="#" >Modif d'un article</a>
 				  </div>			
 			</li>

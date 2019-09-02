@@ -93,7 +93,9 @@ abstract class Connexion {
 
         $i = $this->recup_last();
        
-        header('Location: index.php?controller=article&task=show_new&id=' .$i);  exit();
+       // header('Location: index.php?controller=article&task=show_new&id=' .$i);  exit();
+       header('Refresh: 1; URL=index.php?controller=article&task=show_new&id=' .$i);  exit(); // mise a jour de l'index    
+       echo '<SCRIPT>javascript:window.close()</SCRIPT>'; // et on fermerait le pop mais ici le exit() annule la fermeture - je laisse aisi mpour laisser l'administrateur apprecier son nouvel article sur la pop
         
     }
 
