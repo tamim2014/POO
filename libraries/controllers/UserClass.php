@@ -6,7 +6,7 @@ namespace Controllers;
 require_once('libraries/models/Connexion.php');
 require_once('libraries/models/UserClass.php');
 
-class UserClass
+class UserClass extends Constructeur
 {
     protected $modelName = \Models\UserClass::class;  //$userClass = new UserClass();
     protected $errorMsgReg='';

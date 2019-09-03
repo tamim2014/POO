@@ -25,13 +25,13 @@
 <body style="background-color:#f7f7f9;" >    	 
         <div id="login"  >
             <h3>Login</h3>
-            <form method="post" action="" name="login">
+            <form method="post" action="/index.php?controller=userClass&task=authentification" name="login">
                 <label>Username or Email</label>
                 <input type="text" name="usernameEmail" autocomplete="off" />
                 <label>Password</label>
                 <input type="password" name="password" autocomplete="off"/>
-                
-                <!-- <div class="errorMsg"><?php echo $errorMsgLogin; ?></div> -->
+                <input type="hidden" name="test" value="TRUE" /> <!-- gestion $errorMsgLogin seulement si submit formulaire -->
+                <div class="errorMsg"><?php if(isset($_POST['test'])) echo $errorMsgLogin; ?></div> 
                 <input type="submit" class="button" name="loginSubmit" value="Login">
                 <input type="button" id="affiche-inscription" class="button" name="inscription" value="Signup"  >
             </form>
