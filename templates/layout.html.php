@@ -50,9 +50,11 @@
 		<div id="documenter_copyright">Programmation Orientee Objet<br></div>
 	</div>
    <!-- Contenu -->
-   <div id="documenter_content" class="tablecentre"  >
+   <div id="documenter_content" class="tablecentre"   >
         <?php  if(!isset($pageContent)) { $pageContent = ob_get_clean(); } ?>
-        <?= $pageContent ?> <!-- variable defini dans index.php: par appel de utils.php -->
+        <div style=" margin-left:5%; width:90%;">
+           <?= $pageContent ?> <!-- variable defini dans index.php: par appel de utils.php -->
+        </div>
    </div>
 
 </body>
