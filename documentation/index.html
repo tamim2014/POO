@@ -403,25 +403,25 @@
 		</section>
 		<section id="editArticle">
 			<h3>Modifier un article : </h3>
-			<p>Le controller Editarticle [ mthd edit() ]  pilote la procedure  </p>
+			<p>C'est toujours le controller Newarticle [ mthd edit() ] qui  pilote la procedure  </p>
 			<div class ="process , prettyprint" style="padding:0;">
-				<button class="b1">/templates/articles/edit.html.php:<code class="mthd">&lt;form action="index.php?controller=editarticle&task=insert methode="POST"&gt;</code><span style="color:blue;">&nbsp;btn Edit</span></button><br>
+				<button class="b1">/templates/articles/new.html.php:<code class="mthd">&lt;form action="index.php?controller=editarticle&task=insert methode="POST"&gt;</code><span style="color:blue;">&nbsp;btn Edit</span></button><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>				
-				<button class="b1" style="color:blue;"> /libraries/controllers/Editarticle.php/ <code class="mthd">edit( )</code></button><br>
+				<button class="b1" style="color:blue;"> /libraries/controllers/Newarticle.php/ <code class="mthd">edit( )</code></button><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>
-				<button class="b1" style="color:blue;"> /libraries/models/Editarticle.php/ <code class="mthd">editArticle.php(title<code>,</code> slug<code>,</code> introduction<code>,</code> content<code>,</code> created_at<code>,</code> photo)</code></button><br>
+				<button class="b1" style="color:blue;"> /libraries/models/Newarticle.php/ <code class="mthd">editArticle.php(title<code>,</code> slug<code>,</code> introduction<code>,</code> content<code>,</code> created_at<code>,</code> photo)</code></button><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>				
-				<button class="b1"> /libraries/Http.php/<code class="mthd">redirect("index.php?controller=editarticle&task=show&id=".$article_id )</code></button><br>
+				<button class="b1"> /libraries/Http.php/<code class="mthd">redirect("index.php?controller=newarticle&task=show&id=".$article_id )</code></button><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>			
-				<button class="b1" id="controllers-article-show"> /libraries/controllers/Editarticle/&nbsp;<code class="mthd">show( )</code>&nbsp;:&nbsp;<code class="mthd">$article_id = $_GET['id'];</code></button><br>																						
+				<button class="b1" id="controllers-article-show"> /libraries/controllers/Newarticle/&nbsp;<code class="mthd">show( )</code>&nbsp;:&nbsp;<code class="mthd">$article_id = $_GET['id'];</code></button><br>																						
 			</div>
 		</section>		
 		
