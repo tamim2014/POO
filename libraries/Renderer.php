@@ -43,4 +43,15 @@
         require('templates/layout.html.php');
     }
 
+    //vue authentification/inscription
+    public function render_login(array $variables=[] )
+    {
+        extract($variables);  // pour transmettre la variable errorMsgLogin au template login.html.php
+        ob_start(); 
+        //require('templates/articles/addArticle.html.php'); 
+        $pageContent = ob_get_clean(); 
+
+        require('templates/login.html.php');
+    }
+
  }
