@@ -18,7 +18,7 @@
     <div class="write_comment" >
         <form action="index.php?controller=comment&task=insert" method="POST" class="yissima" > 
             <input class="wendo"  type="text" name="author" placeholder="Votre pseudo !"> 
-            <textarea class="hindri"  name="content" id="" cols="30" rows="10" placeholder="Votre commentaire ..."></textarea>       
+            <textarea class="hindri"  name="content" id="" cols="30" rows="5" placeholder="Votre commentaire ..."></textarea>       
             <input  type="hidden" name="article_id" value="<?= $article_id ?>">
             <button class="pveha">Commenter !</button>
         </form>

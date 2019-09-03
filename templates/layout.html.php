@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/menu_accordeon.css" media="all">
     <link rel="stylesheet" href="css/show.html.css" type="text/css" media="screen, projection"> <!--  background de l'article et de son titre -->
     <link rel="stylesheet" href="documentation/css/prettify.css" type="text/css" media="screen, projection">
+    
  
     <title>Mon blog - <?= $pageTitle ?></title> <!-- variable defini dans index.php -->
 </head>
