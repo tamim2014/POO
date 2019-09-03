@@ -30,8 +30,8 @@
                 <input type="text" name="usernameEmail" autocomplete="off" />
                 <label>Password</label>
                 <input type="password" name="password" autocomplete="off"/>
-                <input type="hidden" name="test" value="TRUE" /> <!-- gestion $errorMsgLogin seulement si submit formulaire -->
-                <div class="errorMsg"><?php if(isset($_POST['test'])) echo $errorMsgLogin; ?></div> 
+                <input type="hidden" name="testSubmit" value="TRUE" /> <!-- gestion $errorMsgLogin seulement si submit formulaire -->
+                <div class="errorMsg"><?php if(isset($_POST['testSubmit'])) echo $errorMsgLogin; ?></div> 
                 <input type="submit" class="button" name="loginSubmit" value="Login">
                 <input type="button" id="affiche-inscription" class="button" name="inscription" value="Signup"  >
             </form>
@@ -40,7 +40,7 @@
 
         <div id="signup"  >
             <h3>Registration</h3>
-            <form method="post" action="" name="signup">
+            <form method="post" action="/index.php?controller=userClass&task=inscription" name="signup">
                 <label>Name</label>
                 <input type="text" name="nameReg" autocomplete="off" />
                 <label>Email</label>
@@ -49,7 +49,8 @@
                 <input type="text" name="usernameReg" autocomplete="off" />
                 <label>Password</label>
                 <input type="password" name="passwordReg" autocomplete="off"/>
-                <!-- <div class="errorMsg"><?php echo $errorMsgReg; ?></div> -->
+                <input type="hidden" name="testSubmit" value="TRUE" /> <!-- gestion $errorMsgLogin seulement si submit formulaire -->
+                <div class="errorMsg"><?php if(isset($_POST['testSubmit'])) echo $errorMsgReg; ?></div> 
                 <input type="submit" class="button" name="signupSubmit" value="Signup">
                 <input type="button" id="affiche-login" class="button" name="inscription" value="Login"  >
             </form>
