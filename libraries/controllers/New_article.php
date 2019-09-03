@@ -33,4 +33,7 @@ class New_article extends Constructeur
             $this->model->insertArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto ) ;  
         }       
     }
+    public function editarticle() {
+        ...
+    }
 }

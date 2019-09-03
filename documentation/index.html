@@ -94,6 +94,10 @@
 					<a style="background-color:black; color:white; text-shadow:none; text-decoration:none; " href="#deleteArticle" onMouseOver="$(this).css('background', '#f7f7f9');$(this).css('color', '#000000');"      onMouseOut="$(this).css('background', 'black');$(this).css('color', 'white');"  >Suppression d'un article</a>
 					<a style="background-color:black; color:white; text-shadow:none; text-decoration:none; " href="#addComment" onMouseOver="$(this).css('background', '#f7f7f9');$(this).css('color', '#000000');"         onMouseOut="$(this).css('background', 'black');$(this).css('color', 'white');" >Ajout d'un comment</a>
 					<a style="background-color:black; color:white; text-shadow:none; text-decoration:none; " href="#deleteComment" onMouseOver="$(this).css('background', '#f7f7f9');$(this).css('color', '#000000');"      onMouseOut="$(this).css('background', 'black');$(this).css('color', 'white');" >Suppression d'un comment</a>
+					
+					<a style="background-color:#1a0000; color:white; text-shadow:none; text-decoration:none; " href="#login"        onMouseOver="$(this).css('background', '#f7f7f9');$(this).css('color', '#000000');"         onMouseOut="$(this).css('background', '#1a0000');$(this).css('color', 'white');" >Authentification admin</a>
+					<a style="background-color:#1a0000; color:white; text-shadow:none; text-decoration:none; " href="#registration" onMouseOver="$(this).css('background', '#f7f7f9');$(this).css('color', '#000000');"        onMouseOut="$(this).css('background', '#1a0000');$(this).css('color', 'white');" >Inscription admin</a>
+					
 					<a style="background-color:black; color:white; text-shadow:none; text-decoration:none; " href="#addArticle" onMouseOver="$(this).css('background', '#f7f7f9');$(this).css('color', '#000000');"         onMouseOut="$(this).css('background', 'black');$(this).css('color', 'white');" >Ajout d'un article</a>
 					<a style="background-color:black; color:white; text-shadow:none; text-decoration:none; " href="#editArticle" onMouseOver="$(this).css('background', '#f7f7f9');$(this).css('color', '#000000');"        onMouseOut="$(this).css('background', 'black');$(this).css('color', 'white');" >Modif d'un article</a>
 				  </div>			
@@ -319,6 +323,60 @@
 					<span class="s1" > | </span><br>	                       			
 				<button class="b1"> <code class="mthd"> <span style="color:blue;">\Http::</span>redirect("Location: article.php?id=" . $article_id);</code></button><br>							
 			</div>
+		</section>
+		<section id="login">
+			<h3>Authentifier l'administrateur :</h3>
+			<p>Le controller UserClass [ mthd authentification() ] pilote la procedure </p>
+			<div class ="process , prettyprint" style="padding:0;">
+				 <!-- Echapper le code php : &lt; et &gt; -->			
+				<button class="b1">/templates/login.html.php:<code class="mthd">&lt;a id="addArticle"   href="#" onclick="pop_authentification();"&gt;</code><span style="color:blue;">Ajout d'un article</span><code class="mthd">&lt;/a&gt;</code></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>  
+				<button class="b1" > &lt; form &nbsp;method="post" &nbsp;action="/index.php?controller=userClass&task=authentification" &nbsp;name="login" &gt;  </button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>				
+				<button class="b1" style="color:blue;"> / libraries / model  /UserClass <code class="mthd">extends</code> Connexion : &nbsp;&nbsp;&nbsp;<code class="mthd">->userLogin($usernameEmail,$password);</code> </button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br> 
+				<button class="b1" style="color:blue;">  <code class="mthd">header("Location: index.php?controller=new_article&task=newarticle");</code></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>				
+				<button class="b1">  <span style="color:blue;">@\Renderer :: </span> <code class="mthd">render_login(compact( 'errorMsgLogin' ));</code></button><br>							
+			</div><br>Vue administrateur
+			<div class ="process , prettyprint" style="padding:0;" > 		
+				<img src="img/login.png" width="100%" height="100%" />					
+			</div>	
+		</section>
+		<section id="registration">
+			<h3>Inscrire un administrateur :</h3>
+			<p>Le controller UserClass [ mthd inscription() ] pilote la procedure </p>
+			<div class ="process , prettyprint" style="padding:0;">
+				 <!-- Echapper le code php : &lt; et &gt; -->			
+				<button class="b1">/templates/login.html.php:<code class="mthd">&lt;a id="addArticle"   href="#" onclick="pop_authentification();"&gt;</code><span style="color:blue;">Ajout d'un article</span><code class="mthd">&lt;/a&gt;</code></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>  
+				<button class="b1" > &lt; form &nbsp;method="post" &nbsp;action="/index.php?controller=userClass&task=inscription" &nbsp;name="login" &gt;  </button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>				
+				<button class="b1" style="color:blue;"> / libraries / model  /UserClass <code class="mthd">extends</code> Connexion : &nbsp;&nbsp;&nbsp;<code class="mthd">->userRegistration($username,$password,$email,$name)</code> </button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br> 
+				<button class="b1" style="color:blue;">  <code class="mthd">header("Location: index.php?controller=new_article&task=newarticle");</code></button><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>
+					<span class="s1" > | </span><br>				
+				<button class="b1">  <span style="color:blue;">@\Renderer :: </span> <code class="mthd">render_login(compact(  ));</code></button><br>							
+			</div><br>Vue administrateur
+			<div class ="process , prettyprint" style="padding:0;" > 		
+				<img src="img/registration.png" width="100%" height="100%" />					
+			</div>	
 		</section>
 		<section id="addArticle">
 			<h3>Ajouter un nouvel article : </h3>

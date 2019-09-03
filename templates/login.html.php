@@ -3,7 +3,7 @@
 <html>
 <head>
  <meta charset="utf-8"> <!-- sinon tu peux pas écrire N° ni les accent-->
- <title> Authentification officier de l'etat civil</title>
+ <title> Authentification administrateur</title>
  <link rel="stylesheet" href="/css/show.html.css" type="text/css" media="screen, projection">
  <link rel="stylesheet" href="/css/login.css" type="text/css" media="screen, projection">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
