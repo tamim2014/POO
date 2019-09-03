@@ -33,24 +33,24 @@
 }
 
 .wendo {
-  width:98%;
-  margin:10px 5px 5px 5px;
-  border: solid 1px #666666; padding: 10px 2px ;
+  width:96%;
+  margin:10px 5px 5px 10px;
+  border: solid 1px #666666; padding: 10px 0px 10px 10px ;
   border: solid 1px #BDC7D8; margin-bottom: 8px;
   border-radius:6px; 
 }
 
 .hindri{
-  width:98%; 
-  margin:5px; 
-  border: solid 1px #666666;padding: 10px 2px ;
+  width:96%; 
+  margin:10px 5px 5px 10px; 
+  border: solid 1px #666666;  padding: 10px 0px 10px 10px ;
   border: solid 1px #BDC7D8; margin-bottom: 8px ;
   border-radius:6px; 
 }
 
 .pveha { 
-   width:98.6%;
-   margin:5px 5px 10px 5px; 
+   width:97.5%;
+   margin:5px 5px 10px 10px; 
 
    background-color: #5fcf80 ; 
    border-color: #3ac162;
