@@ -84,7 +84,7 @@ abstract class Connexion {
         return $last;
     }
 
-    // innsere un article et redirige vers son affichage
+    // insere un article et redirige vers son affichage
     public function insertArticle($title, $slug, $introduction, $content, $created_at, $nomPhoto)
     {   
      

@@ -2,11 +2,11 @@
 
 namespace Controllers;
 
-class New_article extends Constructeur
+class Edit_article extends Constructeur
 {
-    protected $modelName = \Models\New_article::class;      
+    protected $modelName = \Models\Edit_article::class;      
        
-    public function newarticle() {
+    public function editarticle() {
         //$articleModel = new \Models\New_article(); 
         $title = null; 
         if (!empty($_POST['title'])  ) {  $title = $_POST['title']; }

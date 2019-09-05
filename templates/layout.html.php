@@ -17,7 +17,11 @@
         function pop_authentification()
         {             
 		    window.open("templates/login.html.php", 'Popup', 'scrollbars=1, Menubar=1, resizable=1, height=510, width= 700 ,  top=125, left=200 '); return false;          
-		}
+        }
+        function pop_authentification_edit()
+        {             
+		    window.open("templates/login_edit.html.php", 'Popup', 'scrollbars=1, Menubar=1, resizable=1, height=510, width= 700 ,  top=125, left=200 '); return false;          
+        }
     </script>
     <link rel="stylesheet" href="css/HoverTabs.css" media="all">
     <link rel="stylesheet" href="css/content.css" media="all">
@@ -44,7 +48,7 @@
                   <a href="#"   > Admin</a>								
 				  <div class="dropdown-content"  >                                       
 					<a  id="addArticle"   href="#" onclick="pop_authentification();" >Ajout d'un article</a>
-					<a  id="editArticle"  href="#" >Modif d'un article</a>
+					<a  id="editArticle"  href="#" onclick="pop_authentification_edit();" >Modif d'un article</a>
 				  </div>			
 			</li>
 		</ol>

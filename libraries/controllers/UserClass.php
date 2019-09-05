@@ -28,6 +28,22 @@ class UserClass extends Constructeur
         }
         @\Renderer::render_login(compact( 'errorMsgLogin' )); 
     }
+    public function authentification_edit() {
+        if (!empty($_POST['loginSubmit'])) {
+            $usernameEmail=$_POST['usernameEmail'];
+            $password=$_POST['password'];
+            if(strlen(trim($usernameEmail))>1 && strlen(trim($password))>1 ) {    
+                $uid=$this->model->userLogin($usernameEmail,$password); // ca se passe ici
+                if($uid) {                  
+                    $url='index.php?controller=edit_article&task=editarticle';        
+                    header("Location: $url"); 
+                }else{        
+                    $errorMsgLogin="Please check login details.";
+                }
+            }
+        }
+        @\Renderer::render_login(compact( 'errorMsgLogin' )); 
+    }
 
     /* Signup Form */
     public function inscription(){
