@@ -86,33 +86,56 @@ class Article extends Constructeur
 
     public function delete(){
 
-        /**
-         * 1. On vérifie que le GET possède bien un paramètre "id" (delete.php?id=202) et que c'est bien un nombre
-         * 
-         *  $_GET['id'] : id transmis par index.html.php 
-         * 
-         */
         if (empty($_GET['id']) || !ctype_digit($_GET['id'])) {
             die("Ho ?! Tu n'as pas précisé l'id de l'article !");
         }
         $id = $_GET['id'];
-        /**
-         * 2. Connexion à la base de données avec PDO
-         * 3. Vérification que l'article existe bel et bien
-         */
-        $article = $this->model->find($id);
+   
+        $article = $this->model->find($id); 
         if (!$article) {
             die("L'article $id n'existe pas, vous ne pouvez donc pas le supprimer !");
         }
-        /**
-         * 4. Réelle suppression de l'article (cet appel fait une connexion avant la suppressio. logique non? tu m'etonnes!!!)
-         */
-        $this->model->delete($id);
-        /**
-         * 5. Redirection vers la page d'accueil
-         * 
-         */
-        
+     
+        $this->model->delete($id); // connexion BD avant la suppression
+           
         \Http::redirect("index.php");
+    }
+
+    public function edit(){
+
+        if (empty($_GET['id']) || !ctype_digit($_GET['id'])) {
+            die("Ho ?! Tu n'as pas précisé l'id de l'article !");
+        }
+        $id = $_GET['id'];
+   
+        $article = $this->model->find($id); 
+        if (!$article) {
+            die("L'article $id n'existe pas, vous ne pouvez donc pas le modifier !");
+        }
+     
+        //Formulaire de modification
+        $pageTitle = $article['title'];// 5.
+       // @\Renderer::render_edit( compact( 'pageTitle' ,'article' , 'id' )); 
+       echo'
+       <div id="modifier" style="margin-left:5%; margin-top:5%;">
+        <form  style="margin-left:16px;" action="index.php?controller=edit_article&task=editarticle"  method="POST"    enctype="multipart/form-data" >       
+            <input type="text" name="title"                value=" '. $pageTitle .' "               style="width:96%; margin-bottom:5px;" />
+            <input type="text" name="introduction"         value=" '.$article['introduction'].' "   style="width:96%; margin-bottom:5px;"/>
+            <textarea name="content"  cols="30" rows="10"  value=" '.$article['content'].' "        style="width:96%; margin-bottom:5px;"></textarea> 
+            <input type="date" name="created_at"           value=" '.$article['created_at'].' "     style="width:96%; margin-bottom:5px;"/>
+            <input type="file" name="photo"                value=" '.$article['photo'].' "          style="width:96%; margin-bottom:5px;"/>    
+            <button type="submit" style="width:96%;" >Enregistrer</button>       
+        </form>
+       </div> 
+       ';
+
+
+        // ACCES EN ECRITURE A LA BASE
+        $modif = $this->model->edit($id); // connexion BD avant la modification
+
+        if($modif) {
+            \Http::redirect("index.php");
+        }  
+        
     }
 }

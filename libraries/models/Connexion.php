@@ -54,6 +54,34 @@ abstract class Connexion {
         $query->execute(['id' => $id]);
     }
 
+    /**
+     *  Modifier un article  dans la base grace a son identifiant
+     * 
+     *  @param integer $id
+     *  @return void
+     */
+    function edit($id)
+    {
+        if (isset($id)){
+            if(isset($_POST['title'])){
+                // new data
+                $title = $_POST["title"];
+                $slug = $_POST["slug"];
+                $introducion = $_POST["introduction"];
+                $content = $_POST["content"];        
+                $created_at = $_POST["created_at"];               
+                $photo = $_POST["photo"];
+
+                $sql = "UPDATE articles 
+                        SET title=?,   slug=?, introduction=?, content=? , created_at=?, photo=?
+                        WHERE id=?";
+                $q = $this->pdo->prepare($sql);
+                $accent = $q->execute(array($title, $slug, $introduction, $content, $created_at, $photo ));
+                htmlentities($accent, ENT_QUOTES, "ISO-8859-1");           
+            }
+        }    
+    }
+
    /**
     * Retourne la liste des aricles classes par date 
     *
@@ -97,6 +125,10 @@ abstract class Connexion {
        echo '<SCRIPT>javascript:window.close()</SCRIPT>'; // et on fermerait le pop mais ici le exit() annule la fermeture - je laisse aisi mpour laisser l'administrateur apprecier son nouvel article sur la pop
         
     }
+
+    //Réinitialisation  de l'auto-incrément(si la table est vidée): 
+   //$this->pdo->exec("ALTER TABLE articles AUTO_INCREMENT=0 "); //mysql_query("ALTER TABLE articles AUTO_INCREMENT=0 ");  
+   //exit();
 
 
 }

@@ -54,4 +54,15 @@
         require('templates/login.html.php');
     }
 
+    //vue de la page de modification d1 article
+    public function render_edit( array $variables=[] )
+    {
+        extract($variables); 
+        ob_start(); 
+        require('templates/articles/editArticle2.html.php'); 
+        $pageContent = ob_get_clean(); 
+
+        require('templates/layout.html.php');
+    }
+
  }
