@@ -11,7 +11,7 @@ $reponse = $conn->query('SELECT * FROM articles ');
 $table='<div id="lister"><table border=1 width=100% >'; 
 $table.='<tr> <th>ID</th><th>DATE</th><th>TITRE</th><th>PHOTO</th><th></th><th></th> </tr>';
 while($article = $reponse->fetch()){// en utlisant FOREACH ça marche pas .j'sais pas pourquoi |   
- $table.='<tr><td>'.$article["id"].'</td><td>'.$article["created_at"] .'</td><td>'.$article["title"].'</td><td><img src="img/'.$article['photo'].'" width="50" height="50" alt="" /></td><td>Delet</td><td>Edit</td></tr>'; 
+ $table.='<tr><td>'.$article["id"].'</td><td>'.$article["created_at"] .'</td><td>'.$article["title"].'</td><td><img src="img/'.$article['photo'].'" width="50" height="50" alt="" /></td><td><a href="index.php?controller=article&task=delete&id='.$article['id'].' "  onclick="return window.confirm(`Êtes vous sur de vouloir supprimer cet article ?!`)"  >Delet</a></td><td>Edit</td></tr>'; 
 
 }
 $table.='</table></div>';
