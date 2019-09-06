@@ -1,9 +1,13 @@
 <?php
 
+
 namespace Controllers;
+
+
 
 class Edit_article extends Constructeur
 {
+    
     protected $modelName = \Models\Edit_article::class;      
        
     public function editarticle() {
