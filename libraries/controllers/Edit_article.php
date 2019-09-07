@@ -3,8 +3,6 @@
 
 namespace Controllers;
 
-
-
 class Edit_article extends Constructeur
 {   
     protected $modelName = \Models\Edit_article::class;             
@@ -41,8 +39,8 @@ class Edit_article extends Constructeur
             //3.On importe le fichier   
             move_uploaded_file($fichierTempo, "C:\wamp64\www\POO\img\\".$nomPhoto);  
         } 
-        // appel de la mthd  libraries/models/New_article/insertArticle()  
-        if($title && $slug && $introduction && $content )  { 
+         
+        if($title && $slug && $introduction && $content &&  $created_at && $nomPhoto )  { 
             $this->model->editArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto ) ;        
         }       
     }

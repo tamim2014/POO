@@ -100,7 +100,7 @@ abstract class Connexion {
 
     public function editArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto)
     {                                             
-        $query =$this->pdo->prepare("UPDATE {$this->table}  SET title = :title, slug= :slug, introduction = :introduction, content = :content, created_at = NOW(), photo = :photo ") ;                                                  
+        $query = $this->pdo->prepare("UPDATE {$this->table}  SET title = :title, slug= :slug, introduction = :introduction, content = :content, created_at = NOW(), photo = :nomPhoto ") ;                                                  
         $query->execute(compact('title', 'slug', 'introduction', 'content', 'creted_at', 'nomPhoto' )); 
 
     }
@@ -108,6 +108,4 @@ abstract class Connexion {
    //Réinitialisation  de l'auto-incrément(si la table est vidée): 
    //$this->pdo->exec("ALTER TABLE articles AUTO_INCREMENT=0 "); //mysql_query("ALTER TABLE articles AUTO_INCREMENT=0 ");  
    //exit();
-
-
 }
