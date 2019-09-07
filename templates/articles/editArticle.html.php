@@ -17,6 +17,7 @@ while($article = $reponse->fetch()){// en utlisant FOREACH ça marche pas .j'sai
  $pageContent = $article['content'];
  $pageDate = $article['created_at'];
  $pagePhoto = $article['photo'];
+ 
  $table.='<tr><td>'.$article["id"].'</td><td>'.$article["created_at"] .'</td><td>'.$article["title"].'</td><td><img src="img/'.$article['photo'].'" width="50" height="50" alt="" /></td><td><a href="editArticle_form?controller=article&task=delete&id='.$article['id'].' "  onclick="return window.confirm(`Êtes vous sur de vouloir supprimer cet article ?!`)"  >Delet</a></td><td><a href="templates/articles/editArticle_form.html.php?id='.$article['id'].'&pageTitle='.$article['title'].'&pageIntro='.$article['introduction'].'&pageContent='.$article['content'].'&pageDate='.$article['created_at'].'&pagePhoto='.$article['photo'].' " >Edit</a></td></tr>'; 
 
 }
