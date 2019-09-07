@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+
 class Article extends Constructeur
 {
 
@@ -101,29 +102,5 @@ class Article extends Constructeur
         \Http::redirect("index.php");
     }
 
-    public function edit(){
-        if (empty($_GET['id']) || !ctype_digit($_GET['id'])) {
-            die("Ho ?! Tu n'as pas précisé l'id de l'article !");
-        }
-     
-        $id = $_GET['id'];
-   
-        $article = $this->model->find($id);
-        if (!$article) {
-            die("L'article $id n'existe pas, vous ne pouvez donc pas le supprimer !");
-        } 
-        
-        $title = $article['title'];
-        $slug = $article['slug'];
-        $intro = $article['introduction'];
-        $content = $article['content'];
-        $created_at = $article['created_at'];
-        $photo = $article['photo'];
-        
-     
-        $this->model->edit($id, $title, $slug, $intro, $content, $created_at, $photo ); // connexion BD avant la modification    
-        // \Http::redirect("index.php");
-         
-        
-    }
+
 }

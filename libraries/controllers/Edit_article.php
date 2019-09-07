@@ -6,12 +6,21 @@ namespace Controllers;
 
 
 class Edit_article extends Constructeur
-{
-    
-    protected $modelName = \Models\Edit_article::class;      
-       
+{   
+    protected $modelName = \Models\Edit_article::class;             
     public function editarticle() {
         //$articleModel = new \Models\New_article(); 
+        if (empty($_GET['id']) || !ctype_digit($_GET['id'])) {
+            die("Ho ?! Tu n'as pas précisé l'id de l'article !");
+        }
+     
+        $id = $_GET['id'];
+   
+        $article = $this->model->find($id);
+        if (!$article) {
+            die("L'article $id n'existe pas, vous ne pouvez donc pas le supprimer !");
+        } 
+
         $title = null; 
         if (!empty($_POST['title'])  ) {  $title = $_POST['title']; }
         $slug = null;
@@ -33,8 +42,8 @@ class Edit_article extends Constructeur
             move_uploaded_file($fichierTempo, "C:\wamp64\www\POO\img\\".$nomPhoto);  
         } 
         // appel de la mthd  libraries/models/New_article/insertArticle()  
-        if($title && $slug && $introduction && $content )  {      
-            $this->model->insertArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto ) ;  
+        if($title && $slug && $introduction && $content )  { 
+            $this->model->editArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto ) ;        
         }       
     }
 

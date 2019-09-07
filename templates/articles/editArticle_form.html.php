@@ -15,7 +15,7 @@
 ?>
 
 <div id="modifier" style="margin-left:5%; margin-top:5%;">                                      
-        <form   action="/index.php?controller=article&task=edit&id=<?= $id ?> "  method="POST"    enctype="multipart/form-data" style="margin-left:16px;" >       
+        <form   action="/index.php?controller=edit_article&task=editArticle&id=<?= $id ?> "  method="POST"    enctype="multipart/form-data" style="margin-left:16px;" >       
             <input type="text" name="title"                value="<?php echo $pageTitle ; ?>"     style="width:96%; margin-bottom:5px;" />
             <input type="text" name="introduction"         value="<?php echo $pageIntro ; ?>"     style="width:96%; margin-bottom:5px;"/>
             <textarea name="content"  cols="30" rows="10"  value="<?php echo $pageContent ; ?>"   style="width:96%; margin-bottom:5px;"></textarea> 
