@@ -8,7 +8,7 @@ namespace Controllers;
 class Edit_article extends Constructeur
 {   
     protected $modelName = \Models\Edit_article::class;             
-    public function editarticle() {
+    public function editArticle() {
         //$articleModel = new \Models\New_article(); 
         if (empty($_GET['id']) || !ctype_digit($_GET['id'])) {
             die("Ho ?! Tu n'as pas précisé l'id de l'article !");
