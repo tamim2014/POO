@@ -35,7 +35,8 @@ class UserClass extends Constructeur
             if(strlen(trim($usernameEmail))>1 && strlen(trim($password))>1 ) {    
                 $uid=$this->model->userLogin($usernameEmail,$password); // ca se passe ici
                 if($uid) {                  
-                    $url='index.php?controller=edit_article&task=editarticle';        
+                    $url='index.php?controller=edit_article&task=editarticle';  
+                    //$url='index.php?controller=article&task=edit';       
                     header("Location: $url"); 
                 }else{        
                     $errorMsgLogin="Please check login details.";

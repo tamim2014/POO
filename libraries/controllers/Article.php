@@ -102,40 +102,28 @@ class Article extends Constructeur
     }
 
     public function edit(){
-
         if (empty($_GET['id']) || !ctype_digit($_GET['id'])) {
             die("Ho ?! Tu n'as pas précisé l'id de l'article !");
         }
+     
         $id = $_GET['id'];
    
-        $article = $this->model->find($id); 
+        $article = $this->model->find($id);
         if (!$article) {
-            die("L'article $id n'existe pas, vous ne pouvez donc pas le modifier !");
-        }
+            die("L'article $id n'existe pas, vous ne pouvez donc pas le supprimer !");
+        } 
+        
+        $title = $article['title'];
+        $slug = $article['slug'];
+        $intro = $article['introduction'];
+        $content = $article['content'];
+        $created_at = $article['created_at'];
+        $photo = $article['photo'];
+        
      
-        //Formulaire de modification
-        $pageTitle = $article['title'];// 5.
-       // @\Renderer::render_edit( compact( 'pageTitle' ,'article' , 'id' )); 
-       echo'
-       <div id="modifier" style="margin-left:5%; margin-top:5%;">
-        <form  style="margin-left:16px;" action="index.php?controller=edit_article&task=editarticle"  method="POST"    enctype="multipart/form-data" >       
-            <input type="text" name="title"                value=" '. $pageTitle .' "               style="width:96%; margin-bottom:5px;" />
-            <input type="text" name="introduction"         value=" '.$article['introduction'].' "   style="width:96%; margin-bottom:5px;"/>
-            <textarea name="content"  cols="30" rows="10"  value=" '.$article['content'].' "        style="width:96%; margin-bottom:5px;"></textarea> 
-            <input type="date" name="created_at"           value=" '.$article['created_at'].' "     style="width:96%; margin-bottom:5px;"/>
-            <input type="file" name="photo"                value=" '.$article['photo'].' "          style="width:96%; margin-bottom:5px;"/>    
-            <button type="submit" style="width:96%;" >Enregistrer</button>       
-        </form>
-       </div> 
-       ';
-
-
-        // ACCES EN ECRITURE A LA BASE
-        $modif = $this->model->edit($id); // connexion BD avant la modification
-
-        if($modif) {
-            \Http::redirect("index.php");
-        }  
+        $this->model->edit($id, $title, $slug, $intro, $content, $created_at, $photo ); // connexion BD avant la modification    
+        // \Http::redirect("index.php");
+         
         
     }
 }

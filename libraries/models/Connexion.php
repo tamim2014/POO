@@ -47,39 +47,40 @@ abstract class Connexion {
      *  @param integer $id
      *  @return void
      */
-    function delete($id)
+    public function delete($id)
     {
         // Attention!!! si on remplace  la table par une variable: la requete sql se met entre DOUBLE COTE
         $query = $this->pdo->prepare("DELETE FROM {$this->table}  WHERE id = :id");
         $query->execute(['id' => $id]);
     }
 
-    /**
-     *  Modifier un article  dans la base grace a son identifiant
-     * 
-     *  @param integer $id
-     *  @return void
-     */
-    function edit($id)
+  
+    public function edit($id, $title, $slug, $intro, $content, $created_at, $photo)
     {
-        if (isset($id)){
-            if(isset($_POST['title'])){
-                // new data
+        //if (isset($id)){
+            if(!isset($_POST['title']) && !isset($_POST['slug']) && !isset($_POST['introduction']) && !isset($_POST['content']) && !isset($_POST['creted_at']) && !isset($_POST['photo']) ){              
+               
                 $title = $_POST["title"];
                 $slug = $_POST["slug"];
                 $introducion = $_POST["introduction"];
                 $content = $_POST["content"];        
                 $created_at = $_POST["created_at"];               
                 $photo = $_POST["photo"];
-
+                
+                /*
                 $sql = "UPDATE articles 
                         SET title=?,   slug=?, introduction=?, content=? , created_at=?, photo=?
                         WHERE id=?";
                 $q = $this->pdo->prepare($sql);
                 $accent = $q->execute(array($title, $slug, $introduction, $content, $created_at, $photo ));
-                htmlentities($accent, ENT_QUOTES, "ISO-8859-1");           
+                htmlentities($accent, ENT_QUOTES, "ISO-8859-1"); 
+                */
+                
+                $query =$this->pdo->prepare("UPDATE {$this->table}  SET title = :title, slug= :slug, introduction = :introduction, content = :content, created_at = :created_at, photo = :photo WHERE id = :id ") ;                                                  
+                $query->execute(['title' => $title, 'slug' => $slug, 'introduction' => $introduction, 'content' => $content, 'created_at' => $created_at, 'photo' => $photo ] );
+             
             }
-        }    
+       // }    
     }
 
    /**
