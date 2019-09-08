@@ -66,6 +66,7 @@
 		   }
 		   button.b1:hover {	background-color:#00ff99; }
 		   span.s1 { margin:0; padding:0;}
+		   span.s2 { margin:0; padding:0; color:gray;}
 		   span.title { font-size:16px; color:gray; }
 		   code.mthd {color:green;}
 		   
@@ -203,7 +204,7 @@
 						<span class="s1" > | </span><br>
 						<span class="s1" > | </span><br>
 						<span class="s1" > | </span><br>				
-					<button class="b1" style="color:blue;"> / libraries / controllers / article.php / <code class="mthd">index( )</code></button><br>
+					<button class="b1" style="color:blue;"> / libraries / controllers / Article.php / <code class="mthd">index( )</code></button><br>
 						<span class="s1" > | </span><br>
 						<span class="s1" > | </span><br>
 						<span class="s1" > | </span><br>
@@ -229,21 +230,25 @@
 			<div class ="process , prettyprint" style="padding:0;">
 				 <!-- Echapper le code php : &lt; et &gt; -->			
 				<button class="b1">/templates/index.html.php:<code class="mthd">&lt;a href="index.php?controller=article&task=show&id=&lt;?= $article['id'] ?&gt;"&gt;</code><span style="color:blue;">Lire la suite</span><code class="mthd">&lt;/a&gt;</code></button><br>
+				    <span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>
-					<span class="s1" > | </span><br>
+					<span class="s2">1.On veut l'identifiant de l'article</span><br>
 				<button class="b1" > / libraries / controllers / Article.php / show(): &nbsp;&nbsp;&nbsp; <code class="mthd">$article_id = $_GET['id'];</code> </button><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>
-					<span class="s1" > | </span><br>				
+					<span class="s1" > | </span><br>
+					<span class="s2">2.On veut tous les donnees  de l'article</span><br>				
 				<button class="b1" style="color:blue;"> / libraries / model  /Article <code class="mthd">extends</code> Connexion : &nbsp;&nbsp;&nbsp;<code class="mthd">->find($article_id)</code> </button><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>
+					<span class="s2">3.On veut tous les commentaires  de l'article</span><br>
 				<button class="b1" style="color:blue;"> / libraries / models / Comment : &nbsp;&nbsp;&nbsp; <code class="mthd">->findAllComments($article_id)</code></button><br>
 					<span class="s1" > | </span><br>
 					<span class="s1" > | </span><br>
-					<span class="s1" > | </span><br>				
+					<span class="s1" > | </span><br>
+					<span class="s2">4.Affichage</span><br>				
 				<button class="b1">  <span style="color:blue;">@\Renderer :: </span> <code class="mthd">render_show( compact( 'pageTitle' ,'article' ,'commentaires' , 'article_id' ));</code></button><br>							
 			</div><br>Vue utilisateur
 			<div class ="process , prettyprint" style="padding:0;" > 		
