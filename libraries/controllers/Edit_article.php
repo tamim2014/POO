@@ -14,10 +14,10 @@ class Edit_article extends Constructeur
      
         $id = $_GET['id'];
    
-        $article = $this->model->find($id);
-        if (!$article) {
-            die("L'article $id n'existe pas, vous ne pouvez donc pas le supprimer !");
-        } 
+        //$article = $this->model->find($id);
+        //if (!$article) {
+         //   die("L'article $id n'existe pas, vous ne pouvez donc pas le supprimer !");
+        //} 
 
         $title = null; 
         if (!empty($_POST['title'])  ) {  $title = $_POST['title']; }
