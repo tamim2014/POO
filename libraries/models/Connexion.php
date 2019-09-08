@@ -90,7 +90,7 @@ abstract class Connexion {
     public function insertArticle($title, $slug, $introduction, $content, $created_at, $nomPhoto)
     {       
         $query = $this->pdo->prepare("INSERT INTO {$this->table} SET title = :title, slug = :slug, introduction = :introduction, content = :content, created_at = NOW(), photo = :nomPhoto");
-        @$query->execute(compact('title', 'slug', 'introduction', 'content', 'creted_at', 'nomPhoto' ));
+        @$query->execute(compact('title', 'slug', 'introduction', 'content', 'created_at', 'nomPhoto' ));
 
         $i = $this->recup_last();
            
@@ -98,10 +98,10 @@ abstract class Connexion {
        echo '<SCRIPT>javascript:window.close()</SCRIPT>'; // et on fermerait le pop mais ici le exit() annule la fermeture - je laisse aisi mpour laisser l'administrateur apprecier son nouvel article sur la pop        
     }
 
-    public function editArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto)
+    public function editArticle($title, $slug,  $introduction, $content, $created_at, $nomPhoto, $id)
     {                                             
-        $query = $this->pdo->prepare("UPDATE {$this->table}  SET title = :title, slug= :slug, introduction = :introduction, content = :content, created_at = NOW(), photo = :nomPhoto ") ;                                                  
-        $query->execute(compact('title', 'slug', 'introduction', 'content', 'creted_at', 'nomPhoto' )); 
+        $query = $this->pdo->prepare("UPDATE {$this->table}  SET title = :title, slug = :slug, introduction = :introduction, content = :content, created_at = NOW(), photo = :nomPhoto, id = :id WHERE id = :id") ;                                                  
+        @$query->execute(compact('title','slug','introduction','content','created_at','nomPhoto','id' )); 
 
     }
 

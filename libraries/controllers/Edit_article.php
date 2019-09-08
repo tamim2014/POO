@@ -1,18 +1,26 @@
 <?php
 
-
 namespace Controllers;
 
 class Edit_article extends Constructeur
 {   
-    protected $modelName = \Models\Edit_article::class;             
-    public function editArticle() {
-        //$articleModel = new \Models\New_article(); 
+    protected $modelName = \Models\Edit_article::class; 
+
+    public function editarticle() {
+        //$articleModel = new \Models\Edit_article(); 
+     
+     
+        //$id = $_GET['id'];
         if (empty($_GET['id']) || !ctype_digit($_GET['id'])) {
             die("Ho ?! Tu n'as pas précisé l'id de l'article !");
+        }else{
+            // test
+            echo 'ok';
+            $id = $_GET['id'];
+            echo $id;
         }
-     
         $id = $_GET['id'];
+        
    
         //$article = $this->model->find($id);
         //if (!$article) {
@@ -40,9 +48,10 @@ class Edit_article extends Constructeur
             move_uploaded_file($fichierTempo, "C:\wamp64\www\POO\img\\".$nomPhoto);  
         } 
          
-        if($title && $slug && $introduction && $content &&  $created_at && $nomPhoto )  { 
-            $this->model->editArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto ) ;        
-        }       
+        //if($title &&  $introduction && $content && $slug && $introduction && $content )  { 
+            $this->model->editArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto, $id ) ;        
+        //} 
+              
     }
 
 }
