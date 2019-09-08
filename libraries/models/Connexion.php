@@ -102,7 +102,7 @@ abstract class Connexion {
     public function editArticle($title, $slug,  $introduction, $content, $created_at, $nomPhoto, $id)
     {                                             
         $query = $this->pdo->prepare("UPDATE {$this->table}  SET title = :title, slug = :slug, introduction = :introduction, content = :content, created_at = NOW(), photo = :nomPhoto, id = :id WHERE id = :id") ; // created_at = NOW ne compte pas parmis le nbre de paramettres                                                 
-        @$query->execute(compact('title','slug','introduction','content','created_at','nomPhoto','id' )); 
+        @$query->execute(compact('title','slug','introduction','content','created_at','nomPhoto','id' )); // Comme je tiens a garder 'created_at : en haut je repete 2 fois le  |id = :id | ce qui ne se fait pas formellement.   
 
     }
 
