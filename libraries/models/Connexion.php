@@ -89,7 +89,7 @@ abstract class Connexion {
     // insere un article et redirige vers son affichage
     public function insertArticle($title, $slug, $introduction, $content, $created_at, $nomPhoto)
     {       
-        $query = $this->pdo->prepare("INSERT INTO {$this->table} SET title = :title, slug = :slug, introduction = :introduction, content = :content, created_at = NOW(), photo = :nomPhoto");
+        $query = $this->pdo->prepare("INSERT INTO {$this->table} SET title = :title, slug = :slug, introduction = :introduction, content = :content, created_at = NOW(), photo = :nomPhoto"); // created_at = NOW ne compte pas parmis le nbre de paramettres 
         //BIZARE la requete s'execute seulement sans la variable 'created_at' si on l'ajoute , le nombre de paramettre depasse et ca ne marche pas! Pourquoi??? Mystere ... ca m'a pris 2 jours pour cerner ce truc
         @$query->execute(compact('title', 'slug', 'introduction', 'content',  'nomPhoto' ));// i fo VIRER created_at car en haut il ne compte pas
 
@@ -101,7 +101,7 @@ abstract class Connexion {
 
     public function editArticle($title, $slug,  $introduction, $content, $created_at, $nomPhoto, $id)
     {                                             
-        $query = $this->pdo->prepare("UPDATE {$this->table}  SET title = :title, slug = :slug, introduction = :introduction, content = :content, created_at = NOW(), photo = :nomPhoto, id = :id WHERE id = :id") ;                                                  
+        $query = $this->pdo->prepare("UPDATE {$this->table}  SET title = :title, slug = :slug, introduction = :introduction, content = :content, created_at = NOW(), photo = :nomPhoto, id = :id WHERE id = :id") ; // created_at = NOW ne compte pas parmis le nbre de paramettres                                                 
         @$query->execute(compact('title','slug','introduction','content','created_at','nomPhoto','id' )); 
 
     }
