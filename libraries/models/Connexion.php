@@ -7,7 +7,7 @@ namespace Models;
  * 
  * require_once('libraries/database.php');| desormais se fait par autoloading
  */
-require_once('libraries/Database.php'); // je le met temporairement car le fichier pop-login.php me le voit pas
+require_once('libraries/Database.php'); // je le met temporairement car le fichier pop-login.php ne le voit pas
 
 abstract class Connexion {
 

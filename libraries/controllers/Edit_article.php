@@ -2,31 +2,19 @@
 
 namespace Controllers;
 
+require_once('templates/articles/editArticle1.html.php');
+
 class Edit_article extends Constructeur
 {   
     protected $modelName = \Models\Edit_article::class; 
 
     public function editarticle() {
-        //$articleModel = new \Models\Edit_article(); 
-     
-     
-        //$id = $_GET['id'];
+
         if (empty($_GET['id']) || !ctype_digit($_GET['id'])) {
             die("Ho ?! Tu n'as pas précisé l'id de l'article !");
-        }else{
-            // test
-            echo 'ok';
-            $id = $_GET['id'];
-            echo $id;
         }
         $id = $_GET['id'];
         
-   
-        //$article = $this->model->find($id);
-        //if (!$article) {
-         //   die("L'article $id n'existe pas, vous ne pouvez donc pas le supprimer !");
-        //} 
-
         $title = null; 
         if (!empty($_POST['title'])  ) {  $title = $_POST['title']; }
         $slug = null;
@@ -46,12 +34,10 @@ class Edit_article extends Constructeur
             $fichierTempo = $_FILES['photo']['tmp_name'];// $_FILES['name de l'input']['path du ficher ']        
             //3.On importe le fichier   
             move_uploaded_file($fichierTempo, "C:\wamp64\www\POO\img\\".$nomPhoto);  
-        } 
-         
-        //if($title &&  $introduction && $content && $slug && $introduction && $content )  { 
-            $this->model->editArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto, $id ) ;        
-        //} 
-              
+        }        
+        $this->model->editArticle( $title, $slug, $introduction, $content, $created_at, $nomPhoto, $id ) ;        
+   
+       // \Http::redirect('index.php'); // cette redirection ne roule pas  (tester pour voir la bizare raison pourquoi !)            
     }
 
 }
