@@ -21,7 +21,7 @@
             <input type="text" name="title"                value="<?php echo $pageTitle ; ?>"     style="width:96%; margin-bottom:5px;"/>
             <input type="text" name="slug"                 value="<?php echo $pageSlug ;   ?>"     style="width:96%; margin-bottom:5px;"/>
             <input type="text" name="introduction"         value="<?php echo $pageIntro ; ?>"     style="width:96%; margin-bottom:5px;"/>
-            <textarea name="content"  cols="30" rows="10"                                         style="width:96%; margin-bottom:5px;"><?php echo $pageContent ; echo $id."Numero identifiant de l article";?></textarea> 
+            <textarea name="content"  cols="30" rows="10"                                         style="width:96%; margin-bottom:5px;"><?php echo $pageContent ; ?></textarea> 
             <input type="date" name="created_at"           value="<?php echo $pageDate ;  ?>"     style="width:96%; margin-bottom:5px;"/>
             <input type="file" name="photo"                value="<?php echo $pagePhoto ; ?>"     style="width:96%; margin-bottom:5px;"/>    
             <button type="submit" style="width:96%;" >Enregistrer</button>       
