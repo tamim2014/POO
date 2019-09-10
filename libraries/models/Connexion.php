@@ -99,11 +99,11 @@ abstract class Connexion {
        echo '<SCRIPT>javascript:window.close()</SCRIPT>'; // et on fermerait le pop mais ici le exit() annule la fermeture - je laisse aisi mpour laisser l'administrateur apprecier son nouvel article sur la pop        
     }
 
-    public function editArticle($title, $slug,  $introduction, $content, $created_at, $nomPhoto, $id)
+    public function editArticle($pageTitle, $pageSlug,  $pageIntro, $pageContent, $pageDate, $pagePhoto, $id)
     {    
         // Dans prepare(...)Au lieu de repeter 2 fois id = :id , On pourrait juste supprimer 'created_at" dans compact(...)                                       
-        $query = $this->pdo->prepare("UPDATE {$this->table}  SET title = :title, slug = :slug, introduction = :introduction, content = :content, created_at = NOW(), photo = :nomPhoto, id = :id WHERE id = :id") ; // created_at = NOW ne compte pas parmis le nbre de paramettres                                                 
-        @$query->execute(compact('title','slug','introduction','content','created_at','nomPhoto','id' )); // Comme je tiens a garder 'created_at : en haut je repete 2 fois le  |id = :id | - ce qui ne se fait pas formellement !.   
+        $query = $this->pdo->prepare("UPDATE {$this->table}  SET title = :pageTitle, slug = :pageSlug, introduction = :pageIntro, content = :pageContent, created_at = NOW(), photo = :pagePhoto, id = :id WHERE id = :id") ; // created_at = NOW ne compte pas parmis le nbre de paramettres                                                 
+        @$query->execute(compact('pageTitle','pageSlug','pageIntro','pageContent','pageDate','pagePhoto','id' )); // Comme je tiens a garder 'created_at : en haut je repete 2 fois le  |id = :id | - ce qui ne se fait pas formellement !.   
 
     }
 
