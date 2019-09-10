@@ -58,8 +58,6 @@ class Article extends Constructeur
         }
         if (!$article_id) { die("Vous devez préciser un paramètre `id` dans l'URL !"); }
             
-  
-
         $article = $this->model->find($article_id); //2. et 3. tableau contenant tous les champs d1 article ( cf libraries/models/Article.php )
         $commentaires =$commentModel->findAllComments($article_id);//4.
 
