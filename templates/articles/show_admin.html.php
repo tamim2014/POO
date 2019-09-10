@@ -33,7 +33,7 @@
                     <blockquote>
                         <em><?= $commentaire['content'] ?></em>
                     </blockquote><br>
-                    <!--  <a href="index.php?controller=comment&task=delete&id=<?= $commentaire['id'] ?>" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer ce commentaire ?!`)">Supprimer</a><br>  -->                  
+                    <a href="index.php?controller=comment&task=delete&id=<?= $commentaire['id'] ?>" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer ce commentaire ?!`)">Supprimer</a><br>
                 </div>               
             <?php endforeach ?>
         <?php endif ?>

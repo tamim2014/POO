@@ -20,6 +20,15 @@
         $pageContent = ob_get_clean(); //  Lit le contenu  du tampon de sortie puis l'efface
         require('templates/layout.html.php');
     }
+    // pour la suppression des commentaire
+    public function render_show_admin( array $variables=[] )
+    {
+        extract($variables); // transforme les champs d'un tableau en variables
+        ob_start(); // mise en tampon des donnees (avant de les envoyer au navigateur)
+        require('templates/articles/show_admin.html.php'); // vue d'1 article
+        $pageContent = ob_get_clean(); //  Lit le contenu  du tampon de sortie puis l'efface
+        require('templates/layout.html.php');
+    }
 
     //vue de la page d'accueil : render('articles/index')
     public function render_index( array $variables=[] )
