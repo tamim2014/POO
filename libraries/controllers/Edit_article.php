@@ -56,6 +56,6 @@ class Edit_article extends Constructeur
             if($pageTitle) {      
                $this->model->editArticle($pageTitle, $pageSlug,  $pageIntro, $pageContent, $pageDate, $pagePhoto, $id ) ;
             }                
-           // \Http::redirect('index.php'); // cette redirection ne roule pas  (tester pour voir la bizare raison pourquoi !)                
+            \Http::redirect('index.php'); // cette redirection ne roule pas  (tester pour voir la bizare raison pourquoi !)                
     }
 }
